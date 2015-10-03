@@ -1,0 +1,1259 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"re",
+				"request"
+			],
+			[
+				"delete",
+				"delete_extra"
+			],
+			[
+				"a",
+				"args"
+			],
+			[
+				"la",
+				"languages"
+			],
+			[
+				"lan",
+				"language"
+			],
+			[
+				"form",
+				"forms"
+			],
+			[
+				"s",
+				"schedules"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"eve",
+				"event_id"
+			],
+			[
+				"ro",
+				"routes"
+			],
+			[
+				"rou",
+				"routes"
+			],
+			[
+				"ex",
+				"except"
+			],
+			[
+				"ini",
+				"initial_data"
+			],
+			[
+				"get_",
+				"get_relations"
+			],
+			[
+				"def",
+				"def	Function"
+			],
+			[
+				"Min",
+				"MinValueValidator"
+			],
+			[
+				"hr",
+				"href	Attr"
+			],
+			[
+				"get",
+				"get_extended_user"
+			],
+			[
+				"save",
+				"save_tour_event_response"
+			],
+			[
+				"sa",
+				"save_event_response"
+			],
+			[
+				"save_e",
+				"save_event_response"
+			],
+			[
+				"sta",
+				"status"
+			],
+			[
+				"va",
+				"is_valid"
+			],
+			[
+				"tou",
+				"tour_event_add_registrant"
+			],
+			[
+				"is",
+				"is_valid"
+			],
+			[
+				"Sche",
+				"EventScheduleForm"
+			],
+			[
+				"ho",
+				"hours"
+			],
+			[
+				"eVEN",
+				"EventForm"
+			],
+			[
+				"input",
+				"inputt	input - text"
+			],
+			[
+				"ac",
+				"action	Attr"
+			],
+			[
+				"me",
+				"method	Attr"
+			],
+			[
+				"Event",
+				"EventAndScheduleForm"
+			],
+			[
+				"cre",
+				"create_context"
+			],
+			[
+				"req",
+				"request"
+			],
+			[
+				"T",
+				"TourFeature"
+			],
+			[
+				"Fil",
+				"FilesForm"
+			],
+			[
+				"ad",
+				"add_prime"
+			],
+			[
+				"c",
+				"check_if_value_is_prime"
+			],
+			[
+				"sq",
+				"sqrt"
+			],
+			[
+				"ma",
+				"math"
+			],
+			[
+				"num",
+				"number"
+			],
+			[
+				"up",
+				"update"
+			],
+			[
+				"TourIm",
+				"TourImageForm"
+			],
+			[
+				"tour",
+				"tour_id"
+			],
+			[
+				"E",
+				"Exception"
+			],
+			[
+				"pro",
+				"price_description"
+			],
+			[
+				"crea",
+				"CreationDate"
+			],
+			[
+				"in",
+				"input_formats"
+			],
+			[
+				"adr",
+				"address_value"
+			],
+			[
+				"inp",
+				"input_string"
+			],
+			[
+				"con",
+				"console"
+			],
+			[
+				"co",
+				"counter"
+			],
+			[
+				"lis",
+				"list"
+			],
+			[
+				"vali",
+				"valid"
+			],
+			[
+				"di",
+				"divisible"
+			],
+			[
+				"to",
+				"total"
+			],
+			[
+				"tot",
+				"totals"
+			],
+			[
+				"val",
+				"value"
+			],
+			[
+				"e",
+				"event"
+			],
+			[
+				"Tour",
+				"TourEvent"
+			],
+			[
+				"file",
+				"files_data"
+			],
+			[
+				"Even",
+				"EventAndScheduleForm"
+			],
+			[
+				"A",
+				"Address"
+			],
+			[
+				"F",
+				"False"
+			],
+			[
+				"files",
+				"files_data"
+			],
+			[
+				"fil",
+				"files_data"
+			],
+			[
+				"li",
+				"link_url"
+			],
+			[
+				"link",
+				"link_name"
+			],
+			[
+				"get_object",
+				"get_object_or_404"
+			],
+			[
+				"save_",
+				"save_tour"
+			],
+			[
+				"gui",
+				"guide_id"
+			],
+			[
+				"fe",
+				"feature"
+			],
+			[
+				"Pr",
+				"PriceForm"
+			],
+			[
+				"Eve",
+				"EventAndScheduleForm"
+			],
+			[
+				"H",
+				"HttpResponse"
+			],
+			[
+				"BL",
+				"blank"
+			],
+			[
+				"B",
+				"Business"
+			],
+			[
+				"ke",
+				"keys"
+			],
+			[
+				"key",
+				"keys_size"
+			],
+			[
+				"min",
+				"min_m"
+			],
+			[
+				"forms",
+				"forms2"
+			],
+			[
+				"for",
+				"form_list"
+			],
+			[
+				"wi",
+				"wizard"
+			],
+			[
+				"Adr",
+				"AddressForm"
+			],
+			[
+				"add",
+				"address"
+			],
+			[
+				"HT",
+				"HttpResponse"
+			],
+			[
+				"mul",
+				"multi_forms"
+			],
+			[
+				"multi",
+				"multi_forms"
+			],
+			[
+				"Pos",
+				"POST"
+			],
+			[
+				"PO",
+				"POST"
+			],
+			[
+				"ut",
+				"utf-8"
+			],
+			[
+				"Po",
+				"POST"
+			],
+			[
+				"fiel",
+				"field_name"
+			],
+			[
+				"model_",
+				"model_form"
+			],
+			[
+				"regi",
+				"registered"
+			],
+			[
+				"ima",
+				"image"
+			],
+			[
+				"mar",
+				"margin-top"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"fon",
+				"font-weight"
+			],
+			[
+				"templ",
+				"template"
+			],
+			[
+				"V",
+				"View"
+			],
+			[
+				"ser",
+				"services_to_show"
+			],
+			[
+				"services",
+				"services_to_show"
+			],
+			[
+				"se",
+				"service_to_add"
+			],
+			[
+				"Serv",
+				"ServiceType"
+			],
+			[
+				"user",
+				"user_id"
+			],
+			[
+				"b",
+				"blank"
+			],
+			[
+				"Ext",
+				"ExtendedUserAdmin"
+			],
+			[
+				"cha",
+				"charge_info"
+			],
+			[
+				"Ma",
+				"MAILGUN_KEY"
+			],
+			[
+				"conf",
+				"confirmation_url"
+			],
+			[
+				"resut",
+				"results"
+			],
+			[
+				"que",
+				"query_field"
+			],
+			[
+				"sea",
+				"search_models"
+			],
+			[
+				"resul",
+				"results"
+			],
+			[
+				"model",
+				"model_result"
+			],
+			[
+				"result",
+				"results_by_name"
+			],
+			[
+				"dis",
+				"distance"
+			],
+			[
+				"acti",
+				"activities"
+			],
+			[
+				"act",
+				"activity_images"
+			],
+			[
+				"pla",
+				"place_core"
+			],
+			[
+				"image",
+				"image_set"
+			],
+			[
+				"al",
+				"all_states"
+			],
+			[
+				"data",
+				"data_to_string"
+			],
+			[
+				"ge",
+				"get"
+			],
+			[
+				"pa",
+				"PASSWORD"
+			],
+			[
+				"sig",
+				"sign_up_form"
+			],
+			[
+				"use",
+				"username"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/home/alejandro/h/muuumx/muuumx/settings.py",
+			"settings":
+			{
+				"buffer_size": 2661,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "views.py",
+			"settings":
+			{
+				"buffer_size": 124,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "muuu.sublime-project",
+			"settings":
+			{
+				"buffer_size": 301,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/alejandro/h/muuumx/muuumx/urls.py",
+			"settings":
+			{
+				"buffer_size": 291,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "templates/home.html",
+			"settings":
+			{
+				"buffer_size": 195,
+				"line_ending": "Unix",
+				"name": "home.html"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 260.0,
+		"selected_items":
+		[
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: is",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: lis",
+				"Package Control: List Packages"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: i",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 139.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/alejandro/h/muuumx/home"
+	],
+	"file_history":
+	[
+		"/home/alejandro/h/muuumx/home/muuu.sublime-project",
+		"/home/alejandro/h/muuumx/README.md",
+		"/home/alejandro/h/muuumx/.gitignore",
+		"/home/alejandro/h/yalku/Web/users/forms.py",
+		"/home/alejandro/h/yalku/Web/business/views/guide_views.py",
+		"/home/alejandro/h/yalku/Web/users/views.py",
+		"/home/alejandro/h/yalku/Web/users/utils.py",
+		"/home/alejandro/h/yalku/Web/tour/static/tour/js/tour.js",
+		"/home/alejandro/h/yalku/Web/tour/urls.py",
+		"/home/alejandro/h/yalku/Web/home/views.py",
+		"/home/alejandro/h/yalku/Web/business/views/__init__.py",
+		"/home/alejandro/h/yalku/Web/tour/views.py",
+		"/home/alejandro/h/yalku/Web/tour/templates/tour/tour_event.html",
+		"/home/alejandro/h/yalku/Web/tour/__init__.py",
+		"/home/alejandro/h/yalku/Web/tour/api_views.py",
+		"/home/alejandro/h/yalku/Web/yalku.sublime-project",
+		"/home/alejandro/h/yalku/Web/manage.py",
+		"/home/alejandro/h/yalku/Web/tour/static/tour/js/tour_signup.js",
+		"/home/alejandro/h/yalku/Web/tour/templates/tour/tour.html",
+		"/home/alejandro/h/yalku/Web/events/models.py",
+		"/home/alejandro/h/yalku/Web/Yalku/urls_api.py",
+		"/home/alejandro/h/yalku/Web/users/urls.py",
+		"/home/alejandro/h/yalku/Web/users/models.py",
+		"/home/alejandro/h/yalku/Web/users/templates/user/users_base.html",
+		"/home/alejandro/h/yalku/Web/users/templates/user/profile.html",
+		"/home/alejandro/h/yalku/Web/core/templates/core/user_profile_base_template.html",
+		"/home/alejandro/h/yalku/Web/users/templates/user/user.html",
+		"/home/alejandro/h/yalku/Web/tour/models.py",
+		"/home/alejandro/h/yalku/Web/tour/templates/tour/tours.html",
+		"/home/alejandro/h/yalku/Web/Yalku/urls.py",
+		"/home/alejandro/h/yalku/Web/tour/forms.py",
+		"/home/alejandro/h/yalku/Web/tour/templates/tour/base_wizard.html",
+		"/home/alejandro/h/yalku/Web/state/views.py",
+		"/home/alejandro/h/yalku/Web/route/views.py",
+		"/home/alejandro/h/yalku/Web/place/views.py",
+		"/home/alejandro/h/yalku/Web/payments/views.py",
+		"/home/alejandro/h/yalku/Web/newsletter/views.py",
+		"/home/alejandro/h/yalku/Web/events/views.py",
+		"/home/alejandro/h/yalku/Web/directory/views.py",
+		"/home/alejandro/h/yalku/Web/core/views.py",
+		"/home/alejandro/h/yalku/Web/activity/views.py",
+		"/home/alejandro/h/yalku/Web/Yalku/views.py",
+		"/home/alejandro/h/yalku/Web/route/models.py",
+		"/home/alejandro/h/yalku/Web/place/models.py",
+		"/home/alejandro/h/yalku/Web/tour/templates/tour/new_schedule.html",
+		"/home/alejandro/h/yalku/Web/events/forms.py",
+		"/home/alejandro/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/alejandro/h/yalku/Web/core/models.py",
+		"/home/alejandro/h/exercises/hackerrank/pe3.py",
+		"/home/alejandro/h/yalku/Web/tour/static/tour/js/new_tour.js",
+		"/home/alejandro/h/yalku/Web/Yalku/settings/base.py",
+		"/home/alejandro/h/yalku/Web/place/templates/place/place.html",
+		"/home/alejandro/h/yalku/Web/tour/templates/tour/new_tour.html",
+		"/home/alejandro/h/yalku/Web/home/templates/home/faq.html",
+		"/home/alejandro/h/yalku/Web/home/templates/home/index.html",
+		"/home/alejandro/h/yalku/Web/core/templates/core/base_template.html",
+		"/home/alejandro/h/exercises/hackerrank/project_euler_1.py",
+		"/home/alejandro/h/exercises/hackerrank/pe2.py",
+		"/home/alejandro/h/yalku/Web/home/search.py",
+		"/home/alejandro/h/yalku/Web/state/templates/state/state.html",
+		"/home/alejandro/h/yalku/Web/place/forms.py",
+		"/home/alejandro/h/yalku/Web/business/models.py",
+		"/home/alejandro/Escritorio/kata.py",
+		"/home/alejandro/Escritorio/kata2.py",
+		"/home/alejandro/h/yalku/Web/tour/templates/tour/wizard_tour.html",
+		"/home/alejandro/h/yalku/Web/tour/templates/tour/wizard_address.html",
+		"/home/alejandro/h/yalku/Web/tour/templates/tour/wizard_addres",
+		"/home/alejandro/h/yalku/Web/tour/utils.py",
+		"/home/alejandro/h/yalku/Web/core/utils.py",
+		"/home/alejandro/h/yalku/Web/home/static/css/faq.css",
+		"/home/alejandro/h/yalku/Web/home/urls.py",
+		"/home/alejandro/h/yalku/Web/directory/templates/directory/directory_page.html",
+		"/home/alejandro/h/yalku/Web/directory/templates/directory/directory.html",
+		"/home/alejandro/h/yalku/Web/directory/models.py",
+		"/home/alejandro/h/yalku/Web/directory/urls.py",
+		"/home/alejandro/h/yalku/Web/Yalku/settings/production.py",
+		"/home/alejandro/h/yalku/Web/users/admin.py",
+		"/home/alejandro/h/yalku/Web/place/serializers.py",
+		"/home/alejandro/h/yalku/Web/place/fixture.py",
+		"/home/alejandro/h/yalku/Web/payments/urls.py",
+		"/home/alejandro/h/yalku/Web/payments/conekta_funcs.py",
+		"/home/alejandro/h/yalku/Web/payments/tests.py",
+		"/home/alejandro/h/yalku/Web/payments/models.py",
+		"/home/alejandro/h/yalku/Web/payments/admin.py",
+		"/home/alejandro/h/yalku/Web/newsletter/urls.py",
+		"/home/alejandro/h/yalku/Web/newsletter/api_views.py",
+		"/home/alejandro/h/yalku/Web/newsletter/models.py",
+		"/home/alejandro/h/yalku/Web/newsletter/admin.py",
+		"/home/alejandro/h/yalku/Web/Yalku/settings/dev.py",
+		"/home/alejandro/h/yalku/Web/.gitignore",
+		"/home/alejandro/h/yalku/Web/events/tests.py",
+		"/home/alejandro/h/yalku/Web/events/admin.py",
+		"/home/alejandro/h/yalku/Web/home/templates/home/terms.html",
+		"/home/alejandro/h/yalku/Web/home/templates/home/privacy.html",
+		"/home/alejandro/h/yalku/Web/tour/templates/tour/tour_sign_up.html",
+		"/home/alejandro/h/yalku/Web/users/templates/user/users.html",
+		"/home/alejandro/h/yalku/Web/users/templates/user/guide/guides.html",
+		"/home/alejandro/h/yalku/Web/state/templates/state/states.html",
+		"/home/alejandro/h/yalku/Web/place/templates/place/places.html",
+		"/home/alejandro/h/yalku/Web/place/templates/place/new_place.html",
+		"/home/alejandro/h/yalku/Web/home/templates/home/near.html",
+		"/home/alejandro/h/yalku/Web/business/templates/business/manage_business.html",
+		"/home/alejandro/h/yalku/Web/business/templates/business/business.html",
+		"/home/alejandro/h/yalku/Web/activity/templates/activity/activities.html",
+		"/home/alejandro/h/yalku/Web/activity/templates/activity/activities_page.html",
+		"/home/alejandro/h/yalku/Web/home/templates/home/show_search.html",
+		"/home/alejandro/h/yalku/Web/home/templates/home/user_profile_base_template.html",
+		"/home/alejandro/h/yalku/Web/home/templates/home/base_template.html",
+		"/home/alejandro/h/yalku/Web/core/templates/base_template.html",
+		"/home/alejandro/h/yalku/Web/state/models.py",
+		"/home/alejandro/h/yalku/Web/place/urls.py",
+		"/home/alejandro/h/yalku/Web/home/api_views.py",
+		"/home/alejandro/h/yalku/Web/home/search_pkg/search.py",
+		"/home/alejandro/h/yalku/Web/home/search_pkg/suggest.py",
+		"/home/alejandro/h/yalku/Web/home/static/js/autocomplete.js",
+		"/home/alejandro/h/yalku/Web/place/api_views.py",
+		"/home/alejandro/h/yalku/Web/state/relations.py",
+		"/home/alejandro/h/yalku/Web/directory/migrations/0003_service_deadline_payment.py",
+		"/home/alejandro/h/yalku/Web/directory/migrations/0008_servicetype_slug.py",
+		"/home/alejandro/h/yalku/Web/users/serializers.py",
+		"/home/alejandro/h/yalku/Web/state/serializers.py",
+		"/home/alejandro/h/yalku/Web/route/serializers.py",
+		"/home/alejandro/h/yalku/Web/users/templates/user/sign_up.html",
+		"/home/alejandro/h/yalku/Web/home/static/js/slides.js",
+		"/home/alejandro/h/yalku/Web/home/static/js/share.min.js",
+		"/home/alejandro/h/yalku/Web/home/static/js/skel.min.js",
+		"/home/alejandro/h/yalku/Web/home/static/js/skel-layers.min.js",
+		"/home/alejandro/h/yalku/Web/home/static/js/jquery.scrollex.min.js"
+	],
+	"find":
+	{
+		"height": 27.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"",
+			"/home/alejandro/h/yalku/Web/Yalku/",
+			"/home/alejandro/h/yalku/Web/Yalku/my_forms",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"tdd",
+			"Mis Tours",
+			"user_now",
+			"mas",
+			"tour.js",
+			"#banner",
+			"banner",
+			">\n",
+			"site_under",
+			"value",
+			"2",
+			"		\n",
+			"advices",
+			"service.service",
+			"send_simple_message",
+			"extends \"home",
+			"extends \"core",
+			"home",
+			"extends \"home/",
+			"search import search",
+			"search_pkg.search import search",
+			"match_images",
+			"minimum_query_length",
+			".search",
+			"search",
+			"home.search",
+			"PlacesSuggestionsSerializer",
+			"get_suggestions",
+			"index_core",
+			"match_service_with_its_relations",
+			"get_near_services",
+			"match_service_with_its_relations",
+			"match_service_with_imgs",
+			"is_a_valid_service",
+			"get_services_to_show",
+			"get_activities_to_show",
+			"all_activities_core",
+			"get_activities_to_show",
+			"activity.views",
+			"decimal_degrees_to_km",
+			"match_place_with_imgs",
+			"get_service_if_place_is_it",
+			"id",
+			"UserModelSerializer",
+			"NewGuideView",
+			"know_if_user_already_apply_to_guide",
+			"normalize_to_extended_user",
+			"get_instance_from_role",
+			"get_user_and_guide_status",
+			"create_basic_context",
+			"mess",
+			"authenticate_admin_user",
+			"import",
+			"get_all_header_images",
+			"get_random_images",
+			"suggest_view",
+			"adding_fixed_img_in_states",
+			"ActivitiesByState_process_data",
+			"('.'))\n",
+			"BusinessForm",
+			"NewGuideView",
+			"RegisterBusinessView",
+			"NewGuide",
+			"notification",
+			"tour_link_form",
+			"class",
+			")\n",
+			"%}\n",
+			"DatesSchedule",
+			"autofixture",
+			"):\n",
+			"select_tour_dates",
+			"line",
+			"start_address",
+			"\"",
+			"UserLogInForm",
+			"\"\n",
+			";			",
+			"received_json_data",
+			"		 \n",
+			"jpg",
+			"9",
+			"%}\n",
+			"taggit",
+			"			'",
+			"search",
+			"-->",
+			")\n",
+			"redirect",
+			"Extended_user",
+			"Extended_",
+			"Exte",
+			"getL"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/home/alejandro/h/muuumx/muuumx/settings.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2661,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1074,
+								1074
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 306.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "views.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 124,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								96,
+								96
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage"
+						},
+						"translation.x": -0.0,
+						"translation.y": 85.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "muuu.sublime-project",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 301,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								42,
+								42
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/home/alejandro/h/muuumx/muuumx/urls.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 291,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								226,
+								226
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "templates/home.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 195,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								179,
+								179
+							]
+						],
+						"settings":
+						{
+							"auto_name": "home.html",
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 253.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "muuu.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"tour/ur",
+				"tour/urls.py"
+			],
+			[
+				"tour/vi",
+				"tour/views.py"
+			],
+			[
+				"tour_ev",
+				"tour/templates/tour/tour_event.html"
+			],
+			[
+				"tour/urls",
+				"tour/urls.py"
+			],
+			[
+				"tour/view",
+				"tour/views.py"
+			],
+			[
+				"views",
+				"tour/views.py"
+			],
+			[
+				"searc",
+				"home/search.py"
+			],
+			[
+				"auto",
+				"home/static/js/autocomplete.js"
+			],
+			[
+				"autoc",
+				"home/static/js/autocomplete.js"
+			],
+			[
+				"manage_",
+				"business/templates/business/manage_business.html"
+			],
+			[
+				"profile",
+				"users/templates/user/profile.html"
+			],
+			[
+				"models",
+				"place/models.py"
+			],
+			[
+				"api",
+				"place/api_views.py"
+			],
+			[
+				"eventm",
+				"events/models.py"
+			],
+			[
+				"tourv",
+				"tour/views.py"
+			],
+			[
+				"tourmod",
+				"tour/models.py"
+			],
+			[
+				"tourvi",
+				"tour/views.py"
+			],
+			[
+				"even",
+				"events/models.py"
+			],
+			[
+				"eventmo",
+				"events/models.py"
+			],
+			[
+				"tourmode",
+				"tour/models.py"
+			],
+			[
+				"for",
+				"tour/forms.py"
+			],
+			[
+				"new",
+				"tour/templates/tour/new_tour.html"
+			],
+			[
+				"new_tour",
+				"tour/static/tour/js/new_tour.js"
+			],
+			[
+				"tour",
+				"tour/static/tour/js/tour.js"
+			],
+			[
+				"placen",
+				"place/templates/place/new_place.html"
+			],
+			[
+				"model",
+				"state/models.py"
+			],
+			[
+				"ba",
+				"home/templates/home/base_template.html"
+			],
+			[
+				"ind",
+				"home/templates/home/index.html"
+			],
+			[
+				"view",
+				"home/views.py"
+			],
+			[
+				"sta",
+				"state/templates/state/state.html"
+			],
+			[
+				"pla",
+				"place/templates/place/place.html"
+			],
+			[
+				"places",
+				"place/templates/place/places.html"
+			],
+			[
+				"users",
+				"users/templates/user/users.html"
+			],
+			[
+				"place",
+				"place/templates/place/place.html"
+			],
+			[
+				"pro",
+				"users/templates/user/profile.html"
+			],
+			[
+				"base",
+				"home/templates/home/base_template.html"
+			],
+			[
+				"sett",
+				"Yalku/settings.py"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 225.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
