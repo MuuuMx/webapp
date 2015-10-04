@@ -15,6 +15,11 @@ def logout_user(request):
 	return redirect('home')
 
 
+def client_dashboard(request):
+	context = {}
+	return render(request, 'news.html', context)
+
+
 class LoginView(View):
 
 	def get(self, request):
@@ -104,3 +109,5 @@ class SignupBusinessView(View):
 			print(e)
 
 		return redirect('home')
+
+

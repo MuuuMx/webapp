@@ -7,10 +7,11 @@ from users import views as user_views
 urlpatterns = [
     # Examples:
     # url(r'^blog/', include('blog.urls')),
-    # url(r'^blog/', include('blog.urls')),
     # url(r'^', include('social.apps.django_app.urls', namespace='social')),
 
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^business/$', include('business.urls'), name='business'),
+    url(r'^client/$', include('business.urls'), name='client'),
     url(
         r'^$',
         home_views.home_page,
