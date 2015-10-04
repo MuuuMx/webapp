@@ -6,44 +6,63 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Dashboard</title>
 	<link rel="stylesheet" href="">
+	<!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="{% static 'css/materialize.min.css' %}"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}"/>
 </head>
 <body>
-<a href="/logout/" class="button">Salir</a>
-{% if user_type  %}
-<nav>
-	<ul>
-		<li><a href="/business/graphic/" title="Grafica">
-			Resumen
+	{% if user_type  %}
+	<nav role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo grey-text text-darken-4">Azuka</a>
+      <ul class="right hide-on-med-and-down grey-text text-darken-4">
+        <li>
+        	<a href="/logout/" class="grey-text text-darken-4 lighten">
+        	 Cerrar Sesión
+        	</a>
+        </li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav grey-text text-darken-4">
+        <li>
+      		<a href="/business/graphic/" title="Grafica" class="indigo lighten-3">
+			 Resumen
+			</a>
+		</li>
+		<li><a href="/business/sales" title="Grafica" class="indigo lighten-3">
+			Ventas
 		</a></li>
-	</ul>
-	<ul>
-		<li><a href="/business/sales" title="Grafica">
-			Añadir Ventas
+		<li><a href="/business/products" title="Grafica" class="indigo lighten-3">
+			Productos y Servicios
 		</a></li>
-	</ul>
-	<ul>
-		<li><a href="/business/sales_month" title="Grafica">
-			Ventas del mes
-		</a></li>
-	</ul>
-	<ul>
-		<li><a href="/business/products" title="Grafica">
-			Catálogo de productos y servicios
-		</a></li>
-	</ul>
-	<ul>
-		<li><a href="/business/add_product/" title="Grafica">
+		<li><a href="/business/add_product/" title="Grafica" class="indigo lighten-3">
 			Agregar producto o servicio
 		</a></li>
-	</ul>
-	<ul>
-		<li><a href="/business/stock" title="Grafica">
+		<li><a href="/business/stock" title="Grafica" class="indigo lighten-3">
 			Inventario
 		</a></li>
-	</ul>
-</nav>
+        <li>
+        	<a href="/logout/" class="grey-text text-darken-4 indigo lighten-2">
+        	 Cerrar Sesión
+        	</a>
+        </li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse "><i class="material-icons grey-text text-darken-4">menu</i></a>
+    </div>
+  </nav>
+
+
+{% else %}
+Soy un cliente
+{% endif %}
+
+
 {% if func == 'resumen' %}
 	la grafica pendeja
+
+	<!-- Ventas-->
 {% elif func == 'ventas'%}
 	Registrar venta
 	<br><br>
@@ -59,32 +78,62 @@
 	<input type="submit" value="añadir ventas"/>
 	</form>
 
+	<div class="container">
+		<div class="row valign-grapper">
+			<div class="card-panel blue col s12"><h3 class="center-align">Nueva Venta</h3></div>
+			<div class="col s12">
+			<form action="/business/sales/" class="center-align"method="post" accept-charset="utf-8">
+				{% csrf_token %}
+				{% for product in products%}
+					{{product.name}}:
+					<input name="checks" id="checks{{product.pk}}" type="checkbox" value="{{product.pk}}"> 
+					Cantidad: <input type="number" name="quantity{{product.pk}}"/>
+					<br><br>
+				{%endfor%}
 
+				<input type="submit" class="boton" value="Guardar"/>
+			</form>
+		</div>
+		</div>
+    </div>
+
+
+<!-- Agregar Producto o Servicio-->
 {% elif func == 'product' %}
 
-	<form action="/business/add_product/" method="post" accept-charset="utf-8">
-		{% csrf_token %}
-		{% for field in product_form%}
-			{{field.label}}: {{field}}
-			<br><br>
-		{%endfor%}
-		<br><br>
-		<h4>Materiales que ocupas</h4>
-		<h5>Si no ocupas nada para fabricarlo o crearlo dejalo en blanco</h5>
-		<div id="material_forms">
-		</div>
-		<a id="add_material_btn" href="#" title="">Agregar material</a>
-		<br><br>
-		<input type="submit" value="enviar"/>
 
-	</form>
-{% elif func == 'catalogo' %}
-	Productos:
-	<br><br>
+
+	<div class="container">
+		<div class="row valign-grapper">
+			<div class="card-panel blue col s12"><h3 class="center-align">Agregar Producto o Servicio</h3></div>
+			<form action="/business/add_product/" class="center-align"method="post" accept-charset="utf-8">
+				{% csrf_token %}
+				{% for field in product_form%}
+					{{field.label}}: {{field}}
+					<br><br>
+				{%endfor%}
+				<br><br>
+				<h4>Materiales que ocupas</h4>
+				<p><center>Si no ocupas nada para fabricarlo o crearlo dejalo en blanco</center></p>
+				<div id="material_forms">
+				</div>
+				<a id="add_material_btn" href="#" title="">Agregar material</a>
+				<br><br>
+				<input type="submit" class="boton" value="enviar"/>
+
+			</form>
+		</div>
+    </div>
+
+<!-- Catalogo-->
+
+{% elif func == 'catalogo'%}
+<ul class="collection with-header">
+		<li class="collection-header"><center><h3>Catalogo</h3></center></li>
 	{% for product in products %}
-		{{product.name}} -- ${{product.price}}
-		<br><br>
+		<li class="collection-item"><span class="title"><h5>{{product.name}} </h5></span> <p>${{product.price}}</p> </li>
 	{% endfor %}
+		</ul>
 
 
 {% elif func == 'ventas_mes' %}
@@ -94,14 +143,15 @@
 		<br><br>
 	{%endfor%}
 
-
+<!-- Stockses -->
 {% elif func == 'stock' %}
-	Stock de materiales utilizados
-	<br><br>
+	<ul class="collection with-header">
+		<li class="collection-header"><center><h3>Stock</h3></center></li>
 	{%for material in materials%}
-		{{material.name}} -- {{material.quantity}} -- {{material.price}}
-		<br><br>
+
+		<li class="collection-item"><span class="title"><h5>{{material.name}}  </h5></span> <p> {{material.quantity}}</p> </li>	
 	{%endfor%}
+	</ul>
 
 {% endif %}
 
@@ -168,5 +218,6 @@ function initMap() {
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
 {%endif%}
+
 </body>
 </html>
