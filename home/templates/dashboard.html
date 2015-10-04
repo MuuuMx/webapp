@@ -13,10 +13,8 @@
     <link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}"/>
 </head>
 <body>
-	{% if user_type  %}
 	<nav role="navigation">
     <div class="nav-wrapper container">
-      <a id="logo-container" href="#" class="brand-logo grey-text text-darken-4">Azuka</a>
       <ul class="right hide-on-med-and-down grey-text text-darken-4">
         <li>
         	<a href="/logout/" class="grey-text text-darken-4 lighten">
@@ -54,16 +52,7 @@
   </nav>
 
 
-{% else %}
-Soy un cliente
-{% endif %}
-
-
-{% if func == 'resumen' %}
-	la grafica pendeja
-
-	<!-- Ventas-->
-{% elif func == 'ventas'%}
+{% if func == 'ventas'%}
 	Registrar venta
 	<br><br>
 	<form method="post" action="/business/sales/">
@@ -96,7 +85,7 @@ Soy un cliente
 		</div>
 		</div>
     </div>
-
+<!-- ===================== -->
 
 <!-- Agregar Producto o Servicio-->
 {% elif func == 'product' %}
