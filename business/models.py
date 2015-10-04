@@ -1,3 +1,5 @@
+import datetime
+
 from django.db import models
 from users.models import BusinessUser
 
@@ -9,3 +11,30 @@ class Place(models.Model):
 	address = models.CharField(max_length=255)
 	longitude = models.IntegerField(default=0)
 	latitude = models.IntegerField(default=0)
+
+
+class Product(models.Model):
+
+	name = models.CharField(max_length=255)
+	price = models.IntegerField()
+
+
+#Insumos
+class Material(models.Model):
+	product = models.ForeignKey(Product)
+
+	unity = models.CharField(max_length=255)
+	quantity = models.IntegerField()
+	name = models.CharField(max_length=255)
+	cost = models.IntegerField()
+
+
+class Sale(models.Model):
+	product = models.ForeignKey(Product)
+	quantity = models.IntegerField()
+	date = models.DateField(default=datetime.date.today)
+
+
+class Stock(models.Model):
+	product = models.ForeignKey(Product)
+	quantity = models.IntegerField()
