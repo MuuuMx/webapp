@@ -78,6 +78,8 @@ Soy un cliente
 
 {% if func == 'resumen' %}
 	la grafica pendeja
+
+	<!-- Ventas-->
 {% elif func == 'ventas'%}
 	Registrar venta
 	<br><br>
@@ -93,10 +95,30 @@ Soy un cliente
 	<input type="submit" value="añadir ventas"/>
 	</form>
 
+	<div class="container">
+		<div class="row valign-grapper">
+			<div class="card-panel blue col s12"><h3 class="center-align">Nueva Venta</h3></div>
+			<div class="col s12">
+			<form action="/business/sales/" class="center-align"method="post" accept-charset="utf-8">
+				{% csrf_token %}
+				{% for product in products%}
+					{{product.name}}:
+					<input name="checks" id="checks{{product.pk}}" type="checkbox" value="{{product.pk}}"> 
+					Cantidad: <input type="number" name="quantity{{product.pk}}"/>
+					<br><br>
+				{%endfor%}
 
-{% elif func == 'product' %}
+				<input type="submit" class="boton" value="Guardar"/>
+			</form>
+		</div>
+		</div>
+    </div>
+
 
 <!-- Agregar Producto o Servicio-->
+{% elif func == 'product' %}
+
+
 
 	<div class="container">
 		<div class="row valign-grapper">
@@ -119,20 +141,27 @@ Soy un cliente
 			</form>
 		</div>
     </div>
-{% elif func == 'catalogo'%}
-	{% for product in products %}
-		{{product.name}} -- ${{product.price}}
-		<br><br>
-	{% endfor %}
 
+<!-- Catalogo-->
+
+{% elif func == 'catalogo'%}
+<ul class="collection with-header">
+		<li class="collection-header"><center><h3>Catalogo</h3></center></li>
+	{% for product in products %}
+		<li class="collection-item"><span class="title"><h5>{{product.name}} </h5></span> <p>${{product.price}}</p> </li>
+	{% endfor %}
+		</ul>
+
+
+<!-- Stockses -->
 
 {% elif func == 'stock' %}
-	Stock de materiales utilizados
-	<br><br>
+	<ul class="collection with-header">
+		<li class="collection-header"><center><h3>Stock</h3></center></li>
 	{%for material in materials%}
-		{{material.name}} -- {{material.quantity}}
-		<br><br>
+		<li class="collection-item"><span class="title"><h5>{{material.name}}  </h5></span> <p> {{material.quantity}}</p> </li>	
 	{%endfor%}
+	</ul>
 
 {% endif %}
 
