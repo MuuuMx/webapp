@@ -63,7 +63,7 @@ class SalesView(View):
 	def post(self, request):
 		products = request.POST.getlist('checks')
 
-		print(request.POST['quantity%s' % 3])
+		
 
 		for i in products:
 			Sale(

@@ -16,8 +16,25 @@
 	{% if user_type  %}
 	<nav role="navigation">
     <div class="nav-wrapper container">
-      <a id="logo-container" href="#" class="brand-logo grey-text text-darken-4">Azuka</a>
+      <a id="logo-container" href="/business" class="brand-logo grey-text text-darken-4">Azuka</a>
       <ul class="right hide-on-med-and-down grey-text text-darken-4">
+      	<li>
+      		<a href="/business/graphic/" title="Grafica" >
+			 Resumen
+			</a>
+		</li>
+		<li><a href="/business/sales" title="Grafica" >
+			Ventas
+		</a></li>
+		<li><a href="/business/products" title="Grafica" >
+			Productos y Servicios
+		</a></li>
+		<li><a href="/business/add_product/" title="Grafica" >
+			Agregar producto o servicio
+		</a></li>
+		<li><a href="/business/stock" title="Grafica">
+			Inventario
+		</a></li>
         <li>
         	<a href="/logout/" class="grey-text text-darken-4 lighten">
         	 Cerrar Sesión
@@ -64,19 +81,6 @@ Soy un cliente
 
 	<!-- Ventas-->
 {% elif func == 'ventas'%}
-	Registrar venta
-	<br><br>
-	<form method="post" action="/business/sales/">
-	{% csrf_token %}
-	{% for product in products%}
-		{{product.name}}:
-		<input name="checks" id="checks{{product.pk}}" type="checkbox" value="{{product.pk}}"> 
-		Cantidad: <input type="number" name="quantity{{product.pk}}"/>
-		<br><br>
-	{%endfor%}
-
-	<input type="submit" value="añadir ventas"/>
-	</form>
 
 	<div class="container">
 		<div class="row valign-grapper">
@@ -133,7 +137,7 @@ Soy un cliente
 	{% for product in products %}
 		<li class="collection-item"><span class="title"><h5>{{product.name}} </h5></span> <p>${{product.price}}</p> </li>
 	{% endfor %}
-		</ul>
+</ul>
 
 
 {% elif func == 'ventas_mes' %}
@@ -153,26 +157,30 @@ Soy un cliente
 	{%endfor%}
 	</ul>
 
-
+<!-- Principal -->
 {% else %}
-	Categorias:
-	<nav>
-		{%for category in categories %}
-		<ul>
-			<li><a href="/client/category/{{category}}" title="{{category}}">
-				{{category}}
-			</a></li>
-		</ul>
-		{%endfor%}
-	</nav>
-	<br><br>
-	<form action="/client/search/" method="post" accept-charset="utf-8">
-		{%csrf_token%}
-		Buscar: <input type="text" name="search" value="" placeholder="">
-		<input type="submit" name="" value="buscar">
-	</form>
-	<br><br>
-	<a href="/client/recomend/" title="">Recomendar</a>
+	<div class="container">
+		<div class="row valign-grapper">
+			<div class="card-panel blue col s12"><h3 class="center-align">Buscar Categorias</h3></div>
+			<div class="col s12">
+				{%for category in categories %}
+				<ul>
+					<li><a href="/client/category/{{category}}" title="{{category}}">
+						{{category}}
+					</a></li>
+				</ul>
+				{%endfor%}
+			</div>
+			<div class="col s12">
+			<form action="/client/search/" method="post" accept-charset="utf-8">
+				{%csrf_token%}
+				<div class="input-field">
+          <input id="search" type="search" required>
+          <label for="search"><i class="material-icons">search</i></label>
+          <i class="material-icons">close</i>
+        </div>
+			</form>
+			<a href="/client/recomend/" title="">Recomendar</a>
 	<br><br>
 	{% if results %}
 		Resultados de la busqueda: 
@@ -180,7 +188,6 @@ Soy un cliente
 		{%for result in results %}
 			{{result.name}} -- ${{result.price}} -- {{result.business}}
 		{%endfor%}
-
 	{%elif place_recomended%}
 		Lugar recomendado:
 		<br><br>
@@ -194,12 +201,20 @@ Soy un cliente
 		{%endfor%}
 	{% endif %}
 {% endif %}
+		</div>
+		</div>
+    </div>
+	
 
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="{% static 'js/products.js' %}"></script>
+
 {% if places_category %}
 <div id="map"></div>
+
+{%endif%}
+
 <script>
 
 	var map;
@@ -212,7 +227,5 @@ Soy un cliente
 
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRDVQPIXrDI_BxIe-IbrEvE8osPdr-K9A"></script>
-{%endif%}
-
 </body>
 </html>
