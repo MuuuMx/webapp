@@ -1,0 +1,6 @@
+.icon-block .material-icons {
+  font-size: inherit;
+}
+#bc {	
+ -webkit-filter: sepia(0.6);
+}
