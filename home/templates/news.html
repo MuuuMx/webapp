@@ -14,33 +14,59 @@
 </head>
 <body>
 
-	<nav role="navigation">
+   <!-- -->
+   <nav role="navigation">
     <div class="nav-wrapper container">
-      <ul class="hide-on-med-and-down grey-text text-darken-4">
+      <a id="logo-container" href="/business" class="brand-logo grey-text text-darken-4"></a>
+      <ul class="right hide-on-med-and-down grey-text text-darken-4">
       	{%for category in categories %}
 	       	<li><a href="/client/category/{{category}}" title="{{category}}">
 	       		{{category}}
 	       	</a></li>
         {%endfor%}
-        <li><a href="/logout/">
-	 		Cerrar Sesión
-		</a></li>
+        <li>
+        	<a href="/logout/" class="grey-text text-darken-4 lighten">
+        	 Cerrar Sesión
+        	</a>
+        </li>
       </ul>
+
+      <ul id="nav-mobile" class="side-nav grey-text text-darken-4">
+        {%for category in categories %}
+	       	<li class="indigo lighten-3"><a href="/client/category/{{category}}" title="{{category}}">
+	       		{{category}}
+	       	</a></li>
+        {%endfor%}
+        	<li>
+        	<a class="indigo lighten-2" href="/logout/" class="grey-text text-darken-4 lighten">
+        	 Cerrar Sesión
+        	</a>
+        </li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse "><i class="material-icons grey-text text-darken-4">menu</i></a>
     </div>
-    </nav>
+  </nav>
+
+   <!-- -->
+	
+
 	<br><br>
 
-	<form action="/client/search/" method="post" accept-charset="utf-8">
-		{%csrf_token%}
-		Buscar un producto: <input type="text" name="search" value="" placeholder="">
-		<input type="submit" name="" value="buscar">
-	</form>
-	<br><br>
-
-	<a href="/client/recomend/" title="">Recomendar</a>
-	<br><br>
-
-	{% if results %}
+	<div class="container">
+		<div class="row valign-grapper">
+			<div class="card-panel blue col s12"><h3 class="center-align">Buscar Productos</h3></div>
+			<div class="col s12">
+				<form>
+					<div class="input-field">
+			          <input id="search" name="search" type="search" required>
+			          <label for="search"><i class="material-icons">search</i></label>
+			          <i class="material-icons">close</i>
+			        </div>
+		        </form>
+			</div>
+			<div class="col s12">
+			<a href="/client/recomend/" title="">Recomendar</a>
+			{% if results %}
 		<h3>Resultados de la busqueda:</h3> 
 		<br><br>
 		{%for result in results %}
@@ -75,10 +101,19 @@
 	        </div>
 		{%endfor%}
 	{% endif %}
+		</div>
+		</div>
+    </div>
+	<br><br>
+
+	
 
 
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="{% static 'js/products.js' %}"></script>
+<script src="{% static 'js/init.js' %}"></script>
+<script src="{% static 'js/materialize.min.js' %}"></script>
+
 </body>
 </html>
