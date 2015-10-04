@@ -5,23 +5,23 @@ counter = 1
 $('#add_material_btn').click(function(event){
 	event.preventDefault()
 	counter ++;
-	html = '<div>Name: <input maxlength="255" name="name' + counter + '" type="text">'
+	html = '<div>Nombre del material: <input maxlength="255" name="name' + counter + '" type="text">'
 			+'<br><br>'
-			+'Unity: <input maxlength="255" name="unity' + counter + '" type="text">'
+			+'Unidades de medicion: <input maxlength="255" name="unity' + counter + '" type="text">'
 			+'<br><br>'
-			+'Quantity: <input name="quantity' + counter + '" type="number">'
+			+'Cantidad que ocupa: <input name="quantity' + counter + '" type="number">'
 			+'<br><br>'
-			+'Cost: <input name="cost' + counter + '" type="number">'
+			+'Costo al que se compra: <input name="cost' + counter + '" type="number">'
 			+'<br><br></div>'
 
 	material_fields.append(html)
 })
 
-material_fields.append('<div>Name: <input maxlength="255" name="name' + counter + '" type="text">'
+material_fields.append('<div>Nombre del material: <input maxlength="255" name="name' + counter + '" type="text">'
 			+'<br><br>'
-			+'Unity: <input maxlength="255" name="unity' + counter + '" type="text">'
+			+'Unidades de medicion: <input maxlength="255" name="unity' + counter + '" type="text">'
 			+'<br><br>'
-			+'Quantity: <input name="quantity' + counter + '" type="number">'
+			+'Cantidad que ocupa: <input name="quantity' + counter + '" type="number">'
 			+'<br><br>'
-			+'Cost: <input name="cost' + counter + '" type="number">'
+			+'Costo al que se compra: <input name="cost' + counter + '" type="number">'
 			+'<br><br></div>')

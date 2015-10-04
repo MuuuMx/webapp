@@ -16,6 +16,23 @@
 	<nav role="navigation">
     <div class="nav-wrapper container">
       <ul class="right hide-on-med-and-down grey-text text-darken-4">
+      	<!-- <li>
+      		<a href="/business/graphic/" title="Grafica" >
+			 Resumen
+			</a>
+		</li> -->
+		<li><a href="/business/sales" title="Grafica" >
+			Ventas
+		</a></li>
+		<li><a href="/business/products" title="Grafica" >
+			Productos y Servicios
+		</a></li>
+		<li><a href="/business/add_product/" title="Grafica" >
+			Agregar producto o servicio
+		</a></li>
+		<li><a href="/business/stock" title="Grafica">
+			Inventario
+		</a></li>
         <li>
         	<a href="/logout/" class="grey-text text-darken-4 lighten">
         	 Cerrar Sesión
@@ -24,11 +41,11 @@
       </ul>
 
       <ul id="nav-mobile" class="side-nav grey-text text-darken-4">
-        <li>
+       <!--  <li>
       		<a href="/business/graphic/" title="Grafica" class="indigo lighten-3">
 			 Resumen
 			</a>
-		</li>
+		</li> -->
 		<li><a href="/business/sales" title="Grafica" class="indigo lighten-3">
 			Ventas
 		</a></li>
@@ -51,50 +68,26 @@
     </div>
   </nav>
 
-
 {% if func == 'ventas'%}
-	Registrar venta
-	<br><br>
-	<form method="post" action="/business/sales/">
-	{% csrf_token %}
-	{% for product in products%}
-		{{product.name}}:
-		<input name="checks" id="checks{{product.pk}}" type="checkbox" value="{{product.pk}}"> 
-		Cantidad: <input type="number" name="quantity{{product.pk}}"/>
-		<br><br>
-	{%endfor%}
-
-	<input type="submit" value="añadir ventas"/>
+	<!-- Ventas -->
+	<form action="/business/sales/" method="post">
+		{% csrf_token %}
+		{% for product in products%}
+			<div class="input-field col s6">
+				{{product.name}}:
+				<input type="number"  value="0" name="quantity{{product.pk}}"/>
+				<br><br>
+			</div>			
+		{%endfor%}
+		<input type="submit" class="boton" value="Guardar"/>
 	</form>
 
-	<div class="container">
-		<div class="row valign-grapper">
-			<div class="card-panel blue col s12"><h3 class="center-align">Nueva Venta</h3></div>
-			<div class="col s12">
-			<form action="/business/sales/" class="center-align"method="post" accept-charset="utf-8">
-				{% csrf_token %}
-				{% for product in products%}
-					{{product.name}}:
-					<input name="checks" id="checks{{product.pk}}" type="checkbox" value="{{product.pk}}"> 
-					Cantidad: <input type="number" name="quantity{{product.pk}}"/>
-					<br><br>
-				{%endfor%}
 
-				<input type="submit" class="boton" value="Guardar"/>
-			</form>
-		</div>
-		</div>
-    </div>
-<!-- ===================== -->
-
-<!-- Agregar Producto o Servicio-->
 {% elif func == 'product' %}
-
-
-
+	<!-- Agregar Producto o Servicio-->
 	<div class="container">
 		<div class="row valign-grapper">
-			<div class="card-panel blue col s12"><h3 class="center-align">Agregar Producto o Servicio</h3></div>
+			<div class="card-panel blue lighten-2 col white-text s12"><h3 class="center-align">Agregar Producto o Servicio</h3></div>
 			<form action="/business/add_product/" class="center-align"method="post" accept-charset="utf-8">
 				{% csrf_token %}
 				{% for field in product_form%}
@@ -114,26 +107,25 @@
 		</div>
     </div>
 
-<!-- Catalogo-->
-
 {% elif func == 'catalogo'%}
-<ul class="collection with-header">
-		<li class="collection-header"><center><h3>Catalogo</h3></center></li>
-	{% for product in products %}
-		<li class="collection-item"><span class="title"><h5>{{product.name}} </h5></span> <p>${{product.price}}</p> </li>
-	{% endfor %}
-		</ul>
+	<!-- Ver los productos -->
+	<ul class="collection with-header">
+			<li class="collection-header"><center><h3>Catalogo</h3></center></li>
+		{% for product in products %}
+			<li class="collection-item"><span class="title"><h5>{{product.name}} </h5></span> <p>${{product.price}}</p> </li>
+		{% endfor %}
+	</ul>
 
 
 {% elif func == 'ventas_mes' %}
-
+	<!-- Ver ventas del mes -->
 	{% for sale in sales %}
 		{{sale.date}} -- {{sale.product}} -- {{sale.quantity}}
 		<br><br>
 	{%endfor%}
 
-<!-- Stockses -->
 {% elif func == 'stock' %}
+	<!-- Stockses -->
 	<ul class="collection with-header">
 		<li class="collection-header"><center><h3>Stock</h3></center></li>
 	{%for material in materials%}
@@ -142,66 +134,10 @@
 	{%endfor%}
 	</ul>
 
-
-{% else %}
-	Categorias:
-	<nav>
-		{%for category in categories %}
-		<ul>
-			<li><a href="/client/category/{{category}}" title="{{category}}">
-				{{category}}
-			</a></li>
-		</ul>
-		{%endfor%}
-	</nav>
-	<br><br>
-	<form action="/client/search/" method="post" accept-charset="utf-8">
-		{%csrf_token%}
-		Buscar: <input type="text" name="search" value="" placeholder="">
-		<input type="submit" name="" value="buscar">
-	</form>
-	<br><br>
-	<a href="/client/recomend/" title="">Recomendar</a>
-	<br><br>
-	{% if results %}
-		Resultados de la busqueda: 
-		<br><br>
-		{%for result in results %}
-			{{result.name}} -- ${{result.price}} -- {{result.business}}
-		{%endfor%}
-
-	{%elif place_recomended%}
-		Lugar recomendado:
-		<br><br>
-		Nombre: {{place_recomended.business_user}}
-		<br><br>
-		Direccion: {{place_recomended.address}}
-
-	{%else%}
-		{% for place in places %}
-			{{place.latitude}}, {{place.longitude}}
-		{%endfor%}
-	{% endif %}
-{% endif %}
-
+{%endif%}
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="{% static 'js/products.js' %}"></script>
-{% if places_category %}
-<div id="map"></div>
-<script>
-
-	var map;
-	function initMap() {
-	  map = new google.maps.Map(document.getElementById('map'), {
-	    center: {lat: -34.397, lng: 150.644},
-	    zoom: 8
-	  });
-	}
-
-</script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRDVQPIXrDI_BxIe-IbrEvE8osPdr-K9A"></script>
-{%endif%}
-
 </body>
 </html>
