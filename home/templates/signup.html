@@ -39,9 +39,9 @@
 			<input type="submit" class="boton" value="Registrarte"> 
       </form>
 			<br><br><br>
-			<a href="/signup/cliente" class="waves-effect waves-light btn-large red">Obtener una cuenta personal</a>
+			<a href="/signup/client" class="waves-effect waves-light btn-large red">Obtener una cuenta personal</a>
 	{% else %}
-		<form action="/signup/cliente/" method="post" accept-charset="utf-8">
+		<form action="/signup/client/" method="post" accept-charset="utf-8">
 		{% csrf_token %}
 		{% for field in user_form%}
 			{{field.label}}: {{field}}

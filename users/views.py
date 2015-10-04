@@ -34,6 +34,7 @@ def search_string(request):
 
 def get_search(request, search):
 	results = Product.objects.filter(name__icontains=search)
+	print('#####')
 	print(results)
 	context = {
 		'user_type': False,

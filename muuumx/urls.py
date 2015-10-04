@@ -16,7 +16,7 @@ urlpatterns = patterns(
         name='home'
     ),
     url(
-        r'^signup/cliente/$',
+        r'^signup/client/$',
         user_views.SignupClientView.as_view(),
         name='signup_client'
     ),
