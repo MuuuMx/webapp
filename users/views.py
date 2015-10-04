@@ -73,8 +73,6 @@ class LoginView(View):
 		return render(request, 'login.html', context)
 
 	def post(self, request):
-		print(request.POST['username'])
-		print(request.POST['password'])
 		user = authenticate(
 			username=request.POST['username'],
 			password=request.POST['password']

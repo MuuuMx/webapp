@@ -18,11 +18,11 @@
       <a id="logo-container" href="/business" class="brand-logo grey-text text-darken-4">	</a>
 
       <ul class="right hide-on-med-and-down grey-text text-darken-4">
-      	<!-- <li>
+      	<li>
       		<a href="/business/graphic/" title="Grafica" >
 			 Resumen
 			</a>
-		</li> -->
+		</li>
 		<li><a href="/business/sales" title="Grafica" >
 			Ventas
 		</a></li>
@@ -43,11 +43,11 @@
       </ul>
 
       <ul id="nav-mobile" class="side-nav grey-text text-darken-4">
-       <!--  <li>
+        <li>
       		<a href="/business/graphic/" title="Grafica" class="indigo lighten-3">
 			 Resumen
 			</a>
-		</li> -->
+		</li>
 		<li><a href="/business/sales" title="Grafica" class="indigo lighten-3">
 			Ventas
 		</a></li>
@@ -83,6 +83,19 @@
 		{%endfor%}
 		<input type="submit" class="boton" value="Guardar"/>
 	</form>
+
+{%elif func == 'resumen' %}
+	
+	<div class="card large col s6">
+        <div class="card-image">
+          <img src="{% static 'img/recta-equilibrio.jpg' %}" style="width: 400px; height:400px; " alt="">
+          <span class="card-title">Aprende a manejar tus finanzas</span>
+        </div>
+        <div class="card-content">
+          <p>Conoce sobre tus ganancias siguiendo esta grafica de punto de equilibrio</p>
+          <p class="red-text">Proximamente la calcularemos por ti ;)</p>
+        </div>        
+    </div>
 
 
 {% elif func == 'product' %}
@@ -120,11 +133,18 @@
 
 
 {% elif func == 'ventas_mes' %}
-	<!-- Ver ventas del mes -->
-	{% for sale in sales %}
-		{{sale.date}} -- {{sale.product}} -- {{sale.quantity}}
-		<br><br>
-	{%endfor%}
+	<div class="row">
+			{% for sale in sales %}
+			<div class="card blue-grey darken-1 col s3">
+		        <div class="card-content white-text">
+		          <span class="card-title">{{sale.product}}</span>
+		          <p>Fecha: {{sale.date}} </p>
+		          <p>Cantidad Vendida: {{sale.quantity}}</p>
+		        </div>
+		      </div>
+			{%endfor%}
+	</div>
+	
 
 {% elif func == 'stock' %}
 	<!-- Stockses -->
