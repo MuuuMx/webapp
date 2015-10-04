@@ -16,9 +16,12 @@
   	<nav class="white" role="navigation">
     <div class="nav-wrapper container">
       <a id="logo-container" href="#" class="brand-logo grey-text text-darken-4">El Link</a>
-      <ul class="right hide-on-med-and-down grey-text text-darken-4">
-        <li><a href="/login" class="grey-text text-darken-4">Iniciar Sesión</a></li>
-        <li><a href="/signup/cliente" class="grey-text teal lighten-3 text-darken-4">Regístrate para Explorar!</a></li>
+      <ul class="right">
+        <li>
+          <a href="/login" class="text-big waves-effect waves-light btn white-text blue lighten-2">
+            Iniciar Sesión
+          </a>
+        </li>
       </ul>
 
       <ul id="nav-mobile" class="side-nav grey-text text-darken-4">
@@ -30,21 +33,26 @@
   </nav>
 
   <div id="index-banner" class="parallax-container">
-    <div class="section no-pad-bot">
-      <div class="container">
+    <div class="section no-pad-bot fix-back">
+      <div class="container" style="background: ">
         <br><br>
-        <h1 class="header center orange-text text-darken-3"><b>El Link</b></h1>
+        <h1 class="header center white-text text-darken-3"><b>El Link</b></h1>
         <div class="row center">
-          <h5 class="header col s12 light grey-text text-darken-4">Un nuevo mercado :v</h5>
+          <h5 class="header col s12 light white-text text-darken-4 text-big-2">Un nuevo mercado</h5>
         </div>
         <div class="row center">
-          <a href="/signup/negocio" id="download-button" class="btn-large waves-effect orange darken-3 z-depth-5">¿Tienes un Negocio? Obten una cuenta Gratis!</a>
+          <a href="/signup/negocio" id="download-button" class="text-big waves-effect waves-light btn white-text blue lighten-2">
+            ¿Tienes un Negocio? ¡Obten una cuenta Gratis!
+          </a>
+          <br><br>
+          <a href="/signup/client" id="download-button" class="text-big waves-effect waves-light btn white-text blue lighten-2">
+            ¡Encuentra opciones nuevas cerca de ti! Registrate como usuario
+          </a>
         </div>
         <br><br>
-
       </div>
     </div>
-    <div class="parallax"><img src="{% static 'img/background1.jpg' %}" alt="mg 1" id="bc"></div>
+    <div class="parallax"><img src="{% static 'img/background1.jpg' %}" alt="mg 1"></div>
   </div>
 
 
@@ -86,17 +94,17 @@
 
 
   <div class="parallax-container valign-wrapper">
-    <div class="section no-pad-bot">
+    <div class="section no-pad-bot fix-back">
       <div class="container">
         <div class="row center">
-          <h4 class="header col s12 z-depth-5" >La forma más fácil de Adminisrar tu negocio</h4	>
+          <h4 class="header white-text text-big-2 col s12 z-depth-5" >La forma más fácil de Adminisrar tu negocio</h4	>
         </div>
       </div>
     </div>
     <div class="parallax" ><img src="{% static 'img/background2.jpg' %}" alt="Unsplashed background img 2" ></div>
   </div>
 
-  <footer class="page-footer teal">
+  <footer class="page-footer blue darken-1">
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
