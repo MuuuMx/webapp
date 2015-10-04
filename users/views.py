@@ -2,14 +2,14 @@ from django.shortcuts import render, redirect
 from django.views.generic import View
 
 # from .models import BaseUser
-from .forms import UserForm
+from .forms import UserForm, UserFormLogIn
 
 
 class LoginView(View):
 
 	def get(self, request):
-		context = {'user_form': UserForm()}
-		print(context['user_form'].fields.dict)
+		context = {'user_form': UserFormLogIn()}
+		print(context['user_form'])
 		return render(request, 'login.html', context)
 
 
