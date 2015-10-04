@@ -10,11 +10,13 @@
 
 	Registrate 
 	<br><br>
-	<form action="/signup" method="post" accept-charset="utf-8">
+	<form action="/signup/cliente/" method="post" accept-charset="utf-8">
+	{%csrf_token%}
 		{% for field in user_form%}
 			{{field.label}}: {{field}}
 			<br><br>
 		{% endfor %}
+		<input type="submit" value="Enviar">
 	</form>
 	
 </body>

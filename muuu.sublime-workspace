@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"i",
+				"inputu	input - url"
+			],
+			[
+				"Base",
+				"BaseUserForm"
+			],
+			[
+				"ma",
+				"max_length"
+			],
+			[
 				"re",
 				"request"
 			],
@@ -158,10 +170,6 @@
 			[
 				"sq",
 				"sqrt"
-			],
-			[
-				"ma",
-				"math"
 			],
 			[
 				"num",
@@ -506,50 +514,100 @@
 			[
 				"pa",
 				"PASSWORD"
-			],
-			[
-				"sig",
-				"sign_up_form"
-			],
-			[
-				"use",
-				"username"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "/home/alejandro/h/muuumx/muuumx/settings.py",
+			"file": "muuumx/settings.py",
 			"settings":
 			{
-				"buffer_size": 2661,
+				"buffer_size": 2684,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "views.py",
+			"file": "muuumx/urls.py",
 			"settings":
 			{
-				"buffer_size": 124,
+				"buffer_size": 616,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/home/alejandro/h/muuumx/muuumx/urls.py",
+			"file": "home/templates/home.html",
 			"settings":
 			{
-				"buffer_size": 291,
+				"buffer_size": 6818,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "templates/home.html",
+			"file": "home/admin.py",
 			"settings":
 			{
-				"buffer_size": 195,
+				"buffer_size": 63,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "home/templates/news.html",
+			"settings":
+			{
+				"buffer_size": 202,
 				"line_ending": "Unix",
-				"name": "home.html"
+				"name": "news.html"
+			}
+		},
+		{
+			"file": "home/views.py",
+			"settings":
+			{
+				"buffer_size": 274,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "home/templates/signup.html",
+			"settings":
+			{
+				"buffer_size": 437,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "users/views.py",
+			"settings":
+			{
+				"buffer_size": 1062,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "home/templates/login.html",
+			"settings":
+			{
+				"buffer_size": 2566,
+				"line_ending": "Unix",
+				"name": "login.html"
+			}
+		},
+		{
+			"file": "users/forms.py",
+			"settings":
+			{
+				"buffer_size": 320,
+				"line_ending": "Unix",
+				"name": "forms.py"
+			}
+		},
+		{
+			"file": "users/models.py",
+			"settings":
+			{
+				"buffer_size": 379,
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -608,12 +666,18 @@
 		"/home/alejandro/h/muuumx",
 		"/home/alejandro/h/muuumx/home",
 		"/home/alejandro/h/muuumx/home/templates",
-		"/home/alejandro/h/muuumx/muuumx",
 		"/home/alejandro/h/muuumx/users",
 		"/home/alejandro/h/muuumx/users/templates"
 	],
 	"file_history":
 	[
+		"/home/alejandro/h/muuumx/business/models.py",
+		"/home/alejandro/h/muuumx/muuu.sublime-project",
+		"/home/alejandro/h/muuumx/home/templates/signup.html",
+		"/home/alejandro/h/muuumx/muuumx/urls.py",
+		"/home/alejandro/h/muuumx/muuumx/settings.py",
+		"/home/alejandro/h/muuumx/templates/home.html",
+		"/home/alejandro/h/muuumx/views.py",
 		"/home/alejandro/h/muuumx/README.md",
 		"/home/alejandro/h/muuumx/.gitignore",
 		"/home/alejandro/h/yalku/Web/users/forms.py",
@@ -734,14 +798,7 @@
 		"/home/alejandro/h/yalku/Web/directory/migrations/0008_servicetype_slug.py",
 		"/home/alejandro/h/yalku/Web/users/serializers.py",
 		"/home/alejandro/h/yalku/Web/state/serializers.py",
-		"/home/alejandro/h/yalku/Web/route/serializers.py",
-		"/home/alejandro/h/yalku/Web/users/templates/user/sign_up.html",
-		"/home/alejandro/h/yalku/Web/home/static/js/slides.js",
-		"/home/alejandro/h/yalku/Web/home/static/js/share.min.js",
-		"/home/alejandro/h/yalku/Web/home/static/js/skel.min.js",
-		"/home/alejandro/h/yalku/Web/home/static/js/skel-layers.min.js",
-		"/home/alejandro/h/yalku/Web/home/static/js/jquery.scrollex.min.js",
-		"/home/alejandro/h/yalku/Web/home/static/js/jquery.scrollgress.min.js"
+		"/home/alejandro/h/yalku/Web/route/serializers.py"
 	],
 	"find":
 	{
@@ -873,24 +930,24 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 8,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/home/alejandro/h/muuumx/muuumx/settings.py",
+					"file": "muuumx/settings.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2661,
+						"buffer_size": 2684,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1074,
-								1074
+								2221,
+								2221
 							]
 						],
 						"settings":
@@ -900,32 +957,232 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 306.0,
+						"translation.y": 1026.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "views.py",
+					"file": "muuumx/urls.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 124,
+						"buffer_size": 616,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								96,
-								96
+								570,
+								570
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "home/templates/home.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6818,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "home/admin.py",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 63,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "home/templates/news.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 202,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								184,
+								184
+							]
+						],
+						"settings":
+						{
+							"auto_name": "news.html",
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "home/views.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 274,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								129,
+								129
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "home/templates/signup.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 437,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								283,
+								283
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "users/views.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1062,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								334,
+								334
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage"
+						},
+						"translation.x": -0.0,
+						"translation.y": 102.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "home/templates/login.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2566,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								775,
+								775
+							]
+						],
+						"settings":
+						{
+							"auto_name": "login.html",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -935,20 +1192,49 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "/home/alejandro/h/muuumx/muuumx/urls.py",
+					"buffer": 9,
+					"file": "users/forms.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 291,
+						"buffer_size": 320,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								226,
-								226
+								69,
+								69
+							]
+						],
+						"settings":
+						{
+							"auto_name": "forms.py",
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "users/models.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 379,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								30,
+								30
 							]
 						],
 						"settings":
@@ -959,36 +1245,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "templates/home.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 195,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								179,
-								179
-							]
-						],
-						"settings":
-						{
-							"auto_name": "home.html",
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
+					"stack_index": 10,
 					"type": "text"
 				}
 			]
