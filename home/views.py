@@ -1,6 +1,11 @@
 from django.shortcuts import render
+from django.shortcuts import get_object_or_404
 
-# Create your views here.
 
 def home_page(request):
-	return render(request, 'home.html')
+
+	if request.user.is_authenticated():
+		return render(request, 'news.html')
+
+	else:
+		return render(request, 'home.html')
