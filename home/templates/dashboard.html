@@ -6,37 +6,71 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Dashboard</title>
 	<link rel="stylesheet" href="">
+	<!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="{% static 'css/materialize.min.css' %}"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}"/>
 </head>
 <body>
-<a href="/logout/" class="button">Salir</a>
-{% if user_type  %}
-<nav>
-	<ul>
-		<li><a href="/business/graphic/" title="Grafica">
-			Resumen
-		</a></li>
-	</ul>
-	<ul>
+	{% if user_type  %}
+	<nav role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo grey-text text-darken-4">Azuka</a>
+      <ul class="right hide-on-med-and-down grey-text text-darken-4">
+      	<li>
+      		<a href="/business/graphic/" title="Grafica">
+			 Resumen
+			</a>
+		</li>
 		<li><a href="/business/sales" title="Grafica">
 			Ventas
 		</a></li>
-	</ul>
-	<ul>
 		<li><a href="/business/products" title="Grafica">
 			Catálogo de productos y servicios
 		</a></li>
-	</ul>
-	<ul>
 		<li><a href="/business/add_product/" title="Grafica">
 			Agregar producto o servicio
 		</a></li>
-	</ul>
-	<ul>
 		<li><a href="/business/stock" title="Grafica">
 			Inventario
 		</a></li>
-	</ul>
-</nav>
+        <li>
+        	<a href="/logout/" class="grey-text text-darken-4 lighten">
+        	 Cerrar Sesión
+        	</a>
+        </li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav grey-text text-darken-4">
+        <li>
+      		<a href="/business/graphic/" title="Grafica" class="indigo lighten-3">
+			 Resumen
+			</a>
+		</li>
+		<li><a href="/business/sales" title="Grafica" class="indigo lighten-3">
+			Ventas
+		</a></li>
+		<li><a href="/business/products" title="Grafica" class="indigo lighten-3">
+			Productos y Servicios
+		</a></li>
+		<li><a href="/business/add_product/" title="Grafica" class="indigo lighten-3">
+			Agregar producto o servicio
+		</a></li>
+		<li><a href="/business/stock" title="Grafica" class="indigo lighten-3">
+			Inventario
+		</a></li>
+        <li>
+        	<a href="/logout/" class="grey-text text-darken-4 indigo lighten-2">
+        	 Cerrar Sesión
+        	</a>
+        </li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse "><i class="material-icons grey-text text-darken-4">menu</i></a>
+    </div>
+  </nav>
+
+
 {% else %}
 Soy un cliente
 {% endif %}
@@ -48,22 +82,29 @@ Soy un cliente
 	mostrar ventas
 {% elif func == 'product' %}
 
-	<form action="/business/add_product/" method="post" accept-charset="utf-8">
-		{% csrf_token %}
-		{% for field in product_form%}
-			{{field.label}}: {{field}}
-			<br><br>
-		{%endfor%}
-		<br><br>
-		<h4>Materiales que ocupas</h4>
-		<h5>Si no ocupas nada para fabricarlo o crearlo dejalo en blanco</h5>
-		<div id="material_forms">
-		</div>
-		<a id="add_material_btn" href="#" title="">Agregar material</a>
-		<br><br>
-		<input type="submit" value="enviar"/>
+<!-- Agregar Producto o Servicio-->
 
-	</form>
+	<div class="container">
+		<div class="row valign-grapper">
+			<div class="card-panel blue col s12"><h3 class="center-align">Agregar Producto o Servicio</h3></div>
+			<form action="/business/add_product/" class="center-align"method="post" accept-charset="utf-8">
+				{% csrf_token %}
+				{% for field in product_form%}
+					{{field.label}}: {{field}}
+					<br><br>
+				{%endfor%}
+				<br><br>
+				<h4>Materiales que ocupas</h4>
+				<p><center>Si no ocupas nada para fabricarlo o crearlo dejalo en blanco</center></p>
+				<div id="material_forms">
+				</div>
+				<a id="add_material_btn" href="#" title="">Agregar material</a>
+				<br><br>
+				<input type="submit" class="boton" value="enviar"/>
+
+			</form>
+		</div>
+    </div>
 {% elif func == 'catalogo'%}
 	{% for product in products %}
 		{{product.name}} -- ${{product.price}}
@@ -71,5 +112,8 @@ Soy un cliente
 {% endif %}
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="{% static 'js/products.js' %}"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>
+    <script src="{% static 'js/init.js' %}"></script>
 </body>
 </html>
