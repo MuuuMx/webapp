@@ -3,13 +3,13 @@ from django.contrib import admin
 
 from home import views as home_views
 from users import views as user_views
+from business import urls
 
 urlpatterns = patterns(
     '',
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^business/$', include('business.urls', namespace='business')),
-    url(r'^client/$', include('business.urls', namespace='client')),
-
+    url(r'^business/', include('business.urls', namespace='business')),
+    url(r'^client/', include('business.urls', namespace='client')),
     url(
         r'^$',
         home_views.home_page,

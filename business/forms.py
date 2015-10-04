@@ -1,6 +1,18 @@
 from django import forms
 from users.forms import UserForm
 
+from .models import Product, Material
 
-class BussinesForm(UserForm):
-	address = forms.CharField(max_length=140)
+
+class ProductForm(forms.ModelForm):
+
+	class Meta():
+		model = Product
+		exclude = ['']
+
+
+class MaterialForm(forms.ModelForm):
+
+	class Meta():
+		model = Material
+		exclude = ['product']

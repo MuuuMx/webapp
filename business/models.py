@@ -17,15 +17,16 @@ class Product(models.Model):
 
 	name = models.CharField(max_length=255)
 	price = models.IntegerField()
+	quantity = models.IntegerField()
 
 
 #Insumos
 class Material(models.Model):
 	product = models.ForeignKey(Product)
 
+	name = models.CharField(max_length=255)
 	unity = models.CharField(max_length=255)
 	quantity = models.IntegerField()
-	name = models.CharField(max_length=255)
 	cost = models.IntegerField()
 
 
@@ -35,6 +36,6 @@ class Sale(models.Model):
 	date = models.DateField(default=datetime.date.today)
 
 
-class Stock(models.Model):
-	product = models.ForeignKey(Product)
-	quantity = models.IntegerField()
+# class Stock(models.Model):
+# 	product = models.ForeignKey(Product)
+# 	quantity = models.IntegerField()

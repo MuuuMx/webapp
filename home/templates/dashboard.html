@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	{% load staticfiles %}
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Dashboard</title>
@@ -11,27 +12,27 @@
 {% if user_type  %}
 <nav>
 	<ul>
-		<li><a href="/business/dashboard/graphic" title="Grafica">
+		<li><a href="/business/graphic/" title="Grafica">
 			Resumen
 		</a></li>
 	</ul>
 	<ul>
-		<li><a href="/business/dashboard/sales" title="Grafica">
+		<li><a href="/business/sales" title="Grafica">
 			Ventas
 		</a></li>
 	</ul>
 	<ul>
-		<li><a href="/business/dashboard/graphic" title="Grafica">
+		<li><a href="/business/products" title="Grafica">
 			Catálogo de productos y servicios
 		</a></li>
 	</ul>
 	<ul>
-		<li><a href="/business/dashboard/add_product" title="Grafica">
+		<li><a href="/business/add_product/" title="Grafica">
 			Agregar producto o servicio
 		</a></li>
 	</ul>
 	<ul>
-		<li><a href="/business/dashboard/stock" title="Grafica">
+		<li><a href="/business/stock" title="Grafica">
 			Inventario
 		</a></li>
 	</ul>
@@ -40,7 +41,35 @@
 Soy un cliente
 {% endif %}
 
-	
-	
+
+{% if func == 'resumen' %}
+	la grafica pendeja
+{% elif func == 'ventas'%}
+	mostrar ventas
+{% elif func == 'product' %}
+
+	<form action="/business/add_product/" method="post" accept-charset="utf-8">
+		{% csrf_token %}
+		{% for field in product_form%}
+			{{field.label}}: {{field}}
+			<br><br>
+		{%endfor%}
+		<br><br>
+		<h4>Materiales que ocupas</h4>
+		<h5>Si no ocupas nada para fabricarlo o crearlo dejalo en blanco</h5>
+		<div id="material_forms">
+		</div>
+		<a id="add_material_btn" href="#" title="">Agregar material</a>
+		<br><br>
+		<input type="submit" value="enviar"/>
+
+	</form>
+{% elif func == 'catalogo'%}
+	{% for product in products %}
+		{{product.name}} -- ${{product.price}}
+	{%endfor%}
+{% endif %}
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="{% static 'js/products.js' %}"></script>
 </body>
 </html>
