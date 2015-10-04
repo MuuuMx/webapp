@@ -1,7 +1,7 @@
 {
 	"SublimeLinter":
 	{
-	    "@python": 3.5,
+	    "@python": 2.7,
 	    "linters":
 	    {
 	        "pep8":

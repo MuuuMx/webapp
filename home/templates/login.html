@@ -57,7 +57,13 @@
             <h2 class="center brown-text"><i class="material-icons">group</i></h2>
             <h5 class="center">Administra el personal de tu negocio</h5>
 
-            <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
+              <form action="/login" method="post" accept-charset="utf-8">
+                {% for field in user_form %}
+                  {{field.label}}: {{field}}
+                  <br><br>
+                {% endfor %}
+              </form>
+            
           </div>
         </div>
 
@@ -135,4 +141,7 @@
     <script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>
     <script src="{% static 'js/init.js' %}"></script>
   </body>
-</html>
+
+
+	
+	
