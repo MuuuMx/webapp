@@ -1,13 +1,15 @@
 import urllib
 import json
+import random
 
 from django.shortcuts import render, redirect
 from django.views.generic import View
 from django.contrib.auth import authenticate, login, logout
 
 # from .models import BaseUser
-from .forms import UserForm, UserFormLogIn, BusinessUserForm
-from business.models import Place
+from .forms import UserForm, UserFormLogIn, BusinessUserForm, categories_of_business
+from business.models import Place, Product
+from .models import BusinessUser
 
 
 def logout_user(request):
@@ -15,9 +17,52 @@ def logout_user(request):
 	return redirect('home')
 
 
+def get_recomendation(request):
+	place = random.choice(Place.objects.all())
+	context = {
+			'user_type': False,
+			'categories': categories_of_business,
+			'place_recomended': place
+		}
+	return render(request, 'dashboard.html', context)
+
+
+def search_string(request):
+	string_to_search = request.POST['search']
+	return redirect('/client/search/%s/' % string_to_search)
+
+
+def get_search(request, search):
+	results = Product.objects.filter(name__icontains=search)
+	print(results)
+	context = {
+		'user_type': False,
+		'categories': categories_of_business,
+		'results': results
+	}
+	return render(request, 'dashboard.html', context)
+
+
 def client_dashboard(request):
-	context = {}
-	return render(request, 'news.html', context)
+	context = {
+		'user_type': False,
+		'categories': categories_of_business
+	}
+	return render(request, 'dashboard.html', context)
+
+
+def get_business_by_category(request, category=''):
+	places = [business.place_set.all()[0] for business in BusinessUser.objects.filter(type=category)]
+
+	print(places)
+	context = {
+		'user_type': False,
+		'categories': categories_of_business,
+		'results': False,
+		'places_category': True,
+		'places': places
+	}
+	return render(request, 'dashboard.html', context)
 
 
 class LoginView(View):
@@ -52,7 +97,10 @@ class SignupClientView(View):
 			user.set_password(request.POST['password'])
 			user.save()
 			# print(user.password, user.name)
-			user = authenticate(username=user.username, password=user.password)
+			user = authenticate(
+				username=request.POST['username'],
+				password=request.POST['password']
+			)
 			# print(user)
 			login(request, user)
 

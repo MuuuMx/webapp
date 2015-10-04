@@ -18,7 +18,12 @@
 	</ul>
 	<ul>
 		<li><a href="/business/sales" title="Grafica">
-			Ventas
+			Añadir Ventas
+		</a></li>
+	</ul>
+	<ul>
+		<li><a href="/business/sales_month" title="Grafica">
+			Ventas del mes
 		</a></li>
 	</ul>
 	<ul>
@@ -37,11 +42,6 @@
 		</a></li>
 	</ul>
 </nav>
-{% else %}
-Soy un cliente
-{% endif %}
-
-
 {% if func == 'resumen' %}
 	la grafica pendeja
 {% elif func == 'ventas'%}
@@ -87,18 +87,86 @@ Soy un cliente
 	{% endfor %}
 
 
+{% elif func == 'ventas_mes' %}
+
+	{% for sale in sales %}
+		{{sale.date}} -- {{sale.product}} -- {{sale.quantity}}
+		<br><br>
+	{%endfor%}
+
+
 {% elif func == 'stock' %}
 	Stock de materiales utilizados
 	<br><br>
 	{%for material in materials%}
-		{{material.name}} -- {{material.quantity}}
+		{{material.name}} -- {{material.quantity}} -- {{material.price}}
 		<br><br>
 	{%endfor%}
 
 {% endif %}
 
 
+
+
+{% else %}
+	Categorias:
+	<nav>
+		{%for category in categories %}
+		<ul>
+			<li><a href="/client/category/{{category}}" title="{{category}}">
+				{{category}}
+			</a></li>
+		</ul>
+		{%endfor%}
+	</nav>
+	<br><br>
+	<form action="/client/search/" method="post" accept-charset="utf-8">
+		{%csrf_token%}
+		Buscar: <input type="text" name="search" value="" placeholder="">
+		<input type="submit" name="" value="buscar">
+	</form>
+	<br><br>
+	<a href="/client/recomend/" title="">Recomendar</a>
+	<br><br>
+	{% if results %}
+		Resultados de la busqueda: 
+		<br><br>
+		{%for result in results %}
+			{{result.name}} -- ${{result.price}} -- {{result.business}}
+		{%endfor%}
+
+	{%elif place_recomended%}
+		Lugar recomendado:
+		<br><br>
+		Nombre: {{place_recomended.business_user}}
+		<br><br>
+		Direccion: {{place_recomended.address}}
+
+	{%else%}
+		<div id="map"></div>
+
+
+		{% for place in places %}
+			{{place.latitude}}, {{place.longitude}}
+		{%endfor%}
+	{% endif %}
+{% endif %}
+
+
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="{% static 'js/products.js' %}"></script>
+{% if places_category %}
+
+<script>
+// var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+function initMap() {
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: -34.397, lng: 150.644},
+    zoom: 8
+  });
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+{%endif%}
 </body>
 </html>

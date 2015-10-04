@@ -1,6 +1,10 @@
+import datetime
+
 from django.shortcuts import render, redirect
 from django.views.generic import View
 from django.shortcuts import get_object_or_404
+
+from users.models import BusinessUser
 
 from .forms import ProductForm, MaterialForm
 from .models import Product, Material, Sale
@@ -37,6 +41,16 @@ def business_products(request):
 	return render(request, 'dashboard.html', context)
 
 
+def sales_month(request):
+	context = {
+		'user_type': True,
+		'func': 'ventas_mes',
+		'sales': Sale.objects.filter(date__month=datetime.date.today().month)
+	}
+
+	return render(request, 'dashboard.html', context)
+
+
 class SalesView(View):
 	def get(self, request):
 		context = {
@@ -61,8 +75,6 @@ class SalesView(View):
 		return redirect('business:sales')
 
 
-
-
 class AddProductView(View):
 	def get(self, request):
 		context = {
@@ -74,7 +86,9 @@ class AddProductView(View):
 		return render(request, 'dashboard.html', context)
 
 	def post(self, request):
-		product = ProductForm(request.POST, request.FILES).save()
+		product = ProductForm(request.POST, request.FILES).save(commit=False)
+		product.business(BusinessUser.objects.get(user=request.user.pk))
+		product.save()
 
 		counter = 1
 		for i in range(1, 11):

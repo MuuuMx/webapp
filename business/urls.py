@@ -18,6 +18,11 @@ urlpatterns = patterns(
 		views.SalesView.as_view(),
 		name='sales'
 	),
+	url(
+		r'^sales_month/$',
+		views.sales_month,
+		name='sales'
+	),
 	#ya
 	url(
 		r'^add_product/$',

@@ -9,7 +9,7 @@ urlpatterns = patterns(
     '',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^business/', include('business.urls', namespace='business')),
-    url(r'^client/', include('business.urls', namespace='client')),
+    url(r'^client/', include('users.urls', namespace='client')),
     url(
         r'^$',
         home_views.home_page,

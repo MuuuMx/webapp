@@ -4,6 +4,16 @@ from django.contrib.auth.models import User
 
 from .models import BusinessUser
 
+categories_of_business = [
+	'Abarrotes',
+	'Comida',
+	'Medicina y salud',
+	'Cultura',
+	'Hospedaje',
+	'Entretenimiento',
+	'Servicios profesionales'
+]
+
 
 class UserForm(forms.ModelForm):
 

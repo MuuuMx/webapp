@@ -12,8 +12,13 @@ class Place(models.Model):
 	longitude = models.IntegerField(default=0)
 	latitude = models.IntegerField(default=0)
 
+	def __str__(self):
+		return str(self.address)
+
 
 class Product(models.Model):
+
+	business = models.ForeignKey(BusinessUser)
 
 	name = models.CharField(max_length=255)
 	price = models.IntegerField()

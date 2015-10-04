@@ -8,7 +8,7 @@ class ProductForm(forms.ModelForm):
 
 	class Meta():
 		model = Product
-		exclude = ['']
+		exclude = ['business']
 
 
 class MaterialForm(forms.ModelForm):
