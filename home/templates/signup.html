@@ -10,13 +10,33 @@
 
 	Registrate 
 	<br><br>
-	<form action="/signup/cliente/" method="post" accept-charset="utf-8">
-	{%csrf_token%}
+
+	{% if business_form %}
+		<form action="/signup/negocio/" method="post" accept-charset="utf-8">
+			{% csrf_token %}
+			{% for field in user_form%}
+				{{field.label}}: {{field}}
+				<br><br>
+			{% endfor %}
+			{% for field in business_form%}
+				{{field.label}}: {{field}}
+				<br><br>
+			{% endfor %}
+			<label for="address">Direccion: </label>
+			<input id="id_address" maxlength="140" name="address" type="text">
+			<br>
+			<input type="submit" value="Enviar">
+	{% else %}
+		<form action="/signup/cliente/" method="post" accept-charset="utf-8">
+		{% csrf_token %}
 		{% for field in user_form%}
 			{{field.label}}: {{field}}
 			<br><br>
 		{% endfor %}
 		<input type="submit" value="Enviar">
+	{% endif %}
+
+
 	</form>
 	
 </body>

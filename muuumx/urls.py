@@ -7,6 +7,8 @@ from users import views as user_views
 urlpatterns = [
     # Examples:
     # url(r'^blog/', include('blog.urls')),
+    # url(r'^blog/', include('blog.urls')),
+    # url(r'^', include('social.apps.django_app.urls', namespace='social')),
 
     url(r'^admin/', include(admin.site.urls)),
     url(
@@ -14,15 +16,24 @@ urlpatterns = [
         home_views.home_page,
         name='home'
     ),
-    # url(r'^blog/', include('blog.urls')),
     url(
         r'^signup/cliente/$',
         user_views.SignupClientView.as_view(),
-        name='signup'
+        name='signup_client'
+    ),
+    url(
+        r'^signup/negocio/$',
+        user_views.SignupBusinessView.as_view(),
+        name='signup_business'
     ),
     url(
         r'^login/$',
         user_views.LoginView.as_view(),
+        name='login'
+    ),
+    url(
+        r'^logout/$',
+        user_views.logout_user,
         name='login'
     ),
 ]

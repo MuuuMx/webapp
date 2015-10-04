@@ -1,9 +1,18 @@
+import urllib
+import json
+
 from django.shortcuts import render, redirect
 from django.views.generic import View
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 
 # from .models import BaseUser
-from .forms import UserForm, UserFormLogIn
+from .forms import UserForm, UserFormLogIn, BusinessUserForm
+from business.models import Place
+
+
+def logout_user(request):
+	logout(request)
+	return redirect('home')
 
 
 class LoginView(View):
@@ -17,7 +26,7 @@ class LoginView(View):
 		print(request.POST['username'])
 		print(request.POST['password'])
 		user = authenticate(
-			user=request.POST['username'],
+			username=request.POST['username'],
 			password=request.POST['password']
 		)
 		print(user)
@@ -35,12 +44,61 @@ class SignupClientView(View):
 	def post(self, request):
 		try:
 			user = UserForm(request.POST, request).save()
-			user.set_password(form.cleaned_data['password'])
+			user.set_password(request.POST['password'])
 			user.save()
-			ExtendedUser(user=user, profile_image='', full_name=user.username).save()
-
-			user = authenticate(user=user.username, password=user.password)
+			# print(user.password, user.name)
+			user = authenticate(username=user.username, password=user.password)
+			# print(user)
 			login(request, user)
+
+		except Exception as e:
+			print(e)
+
+		return redirect('home')
+
+
+class SignupBusinessView(View):
+
+	def get(self, request):
+		context = {
+			'user_form': UserForm(),
+			'business_form': BusinessUserForm()
+		}
+		return render(request, 'signup.html', context)
+
+	def post(self, request):
+		try:
+			user = UserForm(request.POST, request)
+			if user.is_valid():
+				user = user.save()
+				user.set_password(request.POST['password'])
+				user.save()
+				print(user)
+				user = authenticate(username=user.username, password=request.POST['password'])
+				login(request, user)
+			else:
+				print(user.errors.items())
+				user.pk
+
+			bussines_user = BusinessUserForm(request.POST, request.FILES).save()
+
+			address = request.POST['address'].replace(' ', '+')
+
+			f = urllib.request.urlopen(
+				"https://maps.googleapis.com/maps/api/geocode/json?"
+				+ "address=%s&key=%s" % (
+					address, 'AIzaSyDvWO5mvLcP3pqdb9c6gXCsW5IyZta2rdA'
+				)
+			).read().decode()
+
+			latlon = json.loads(f)['results'][0]['geometry']['location']
+			address = request.POST['address'].replace('+', ' ')
+			place = Place(
+				business_user=business_user,
+				address=address,
+				longitude=latlon['lng'],
+				latitude=latlon['lat']
+			).save()
 
 		except Exception as e:
 			print(e)
