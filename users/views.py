@@ -24,7 +24,7 @@ def get_recomendation(request):
 			'categories': categories_of_business,
 			'place_recomended': place
 		}
-	return render(request, 'dashboard.html', context)
+	return render(request, 'news.html', context)
 
 
 def search_string(request):
@@ -40,7 +40,7 @@ def get_search(request, search):
 		'categories': categories_of_business,
 		'results': results
 	}
-	return render(request, 'dashboard.html', context)
+	return render(request, 'news.html', context)
 
 
 def client_dashboard(request):
@@ -48,7 +48,7 @@ def client_dashboard(request):
 		'user_type': False,
 		'categories': categories_of_business
 	}
-	return render(request, 'dashboard.html', context)
+	return render(request, 'news.html', context)
 
 
 def get_business_by_category(request, category=''):
@@ -62,7 +62,7 @@ def get_business_by_category(request, category=''):
 		'places_category': True,
 		'places': places
 	}
-	return render(request, 'dashboard.html', context)
+	return render(request, 'news.html', context)
 
 
 class LoginView(View):

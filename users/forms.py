@@ -11,7 +11,7 @@ categories_of_business = [
 	'Cultura',
 	'Hospedaje',
 	'Entretenimiento',
-	'Servicios profesionales'
+	# 'Servicios profesionales'
 ]
 
 
@@ -21,12 +21,36 @@ class UserForm(forms.ModelForm):
 		model = User
 		fields = ['username', 'password', 'email']
 
+		labels = {
+			'username': 'Nombre de usuario',
+			'password': 'Contraseña',
+			'email': 'Correo electronico'
+		}
+
+		widgets = {
+			'password': forms.PasswordInput(
+				attrs={
+					'type': 'password',
+					'class': 'input_field input_field-social',
+					'placeholder': 'Ingresa tu contraseña'}
+			)
+		}
+
 
 class UserFormLogIn(forms.ModelForm):
 
 	class Meta():
 		model = User
 		fields = ['username', 'password']
+
+		widgets = {
+			'password': forms.PasswordInput(
+				attrs={
+					'type': 'password',
+					'class': 'input_field input_field-social',
+					'placeholder': 'Ingresa tu contraseña'}
+			)
+		}
 
 
 class BusinessUserForm(forms.ModelForm):
