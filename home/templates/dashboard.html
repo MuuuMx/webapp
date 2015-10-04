@@ -13,16 +13,16 @@
     <link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}"/>
 </head>
 <body>
-	{% if user_type  %}
 	<nav role="navigation">
     <div class="nav-wrapper container">
       <a id="logo-container" href="/business" class="brand-logo grey-text text-darken-4">	</a>
+
       <ul class="right hide-on-med-and-down grey-text text-darken-4">
-      	<li>
+      	<!-- <li>
       		<a href="/business/graphic/" title="Grafica" >
 			 Resumen
 			</a>
-		</li>
+		</li> -->
 		<li><a href="/business/sales" title="Grafica" >
 			Ventas
 		</a></li>
@@ -43,11 +43,11 @@
       </ul>
 
       <ul id="nav-mobile" class="side-nav grey-text text-darken-4">
-        <li>
+       <!--  <li>
       		<a href="/business/graphic/" title="Grafica" class="indigo lighten-3">
 			 Resumen
 			</a>
-		</li>
+		</li> -->
 		<li><a href="/business/sales" title="Grafica" class="indigo lighten-3">
 			Ventas
 		</a></li>
@@ -70,46 +70,26 @@
     </div>
   </nav>
 
-
-{% else %}
-Soy un cliente
-{% endif %}
-
-
-{% if func == 'resumen' %}
-	la grafica pendeja
-
-	<!-- Ventas-->
-{% elif func == 'ventas'%}
-
-	<div class="container">
-		<div class="row valign-grapper">
-			<div class="card-panel blue col s12"><h3 class="center-align">Nueva Venta</h3></div>
-			<div class="col s12">
-			<form action="/business/sales/" class="center-align"method="post" accept-charset="utf-8">
-				{% csrf_token %}
-				{% for product in products%}
-					{{product.name}}:
-					<input name="checks" id="checks{{product.pk}}" type="checkbox" value="{{product.pk}}"> 
-					Cantidad: <input type="number" name="quantity{{product.pk}}"/>
-					<br><br>
-				{%endfor%}
-
-				<input type="submit" class="boton" value="Guardar"/>
-			</form>
-		</div>
-		</div>
-    </div>
+{% if func == 'ventas'%}
+	<!-- Ventas -->
+	<form action="/business/sales/" method="post">
+		{% csrf_token %}
+		{% for product in products%}
+			<div class="input-field col s6">
+				{{product.name}}:
+				<input type="number"  value="0" name="quantity{{product.pk}}"/>
+				<br><br>
+			</div>			
+		{%endfor%}
+		<input type="submit" class="boton" value="Guardar"/>
+	</form>
 
 
-<!-- Agregar Producto o Servicio-->
 {% elif func == 'product' %}
-
-
-
+	<!-- Agregar Producto o Servicio-->
 	<div class="container">
 		<div class="row valign-grapper">
-			<div class="card-panel blue col s12"><h3 class="center-align">Agregar Producto o Servicio</h3></div>
+			<div class="card-panel blue lighten-2 col white-text s12"><h3 class="center-align">Agregar Producto o Servicio</h3></div>
 			<form action="/business/add_product/" class="center-align"method="post" accept-charset="utf-8">
 				{% csrf_token %}
 				{% for field in product_form%}
@@ -129,26 +109,25 @@ Soy un cliente
 		</div>
     </div>
 
-<!-- Catalogo-->
-
 {% elif func == 'catalogo'%}
-<ul class="collection with-header">
-		<li class="collection-header"><center><h3>Catalogo</h3></center></li>
-	{% for product in products %}
-		<li class="collection-item"><span class="title"><h5>{{product.name}} </h5></span> <p>${{product.price}}</p> </li>
-	{% endfor %}
-</ul>
+	<!-- Ver los productos -->
+	<ul class="collection with-header">
+			<li class="collection-header"><center><h3>Catalogo</h3></center></li>
+		{% for product in products %}
+			<li class="collection-item"><span class="title"><h5>{{product.name}} </h5></span> <p>${{product.price}}</p> </li>
+		{% endfor %}
+	</ul>
 
 
 {% elif func == 'ventas_mes' %}
-
+	<!-- Ver ventas del mes -->
 	{% for sale in sales %}
 		{{sale.date}} -- {{sale.product}} -- {{sale.quantity}}
 		<br><br>
 	{%endfor%}
 
-<!-- Stockses -->
 {% elif func == 'stock' %}
+	<!-- Stockses -->
 	<ul class="collection with-header">
 		<li class="collection-header"><center><h3>Stock</h3></center></li>
 	{%for material in materials%}
@@ -157,77 +136,10 @@ Soy un cliente
 	{%endfor%}
 	</ul>
 
-<!-- Principal -->
-{% else %}
-	<div class="container">
-		<div class="row valign-grapper">
-			<div class="card-panel blue col s12"><h3 class="center-align">Buscar Categorias</h3></div>
-			<div class="col s12">
-				{%for category in categories %}
-				<ul>
-					<li><a href="/client/category/{{category}}" title="{{category}}">
-						{{category}}
-					</a></li>
-				</ul>
-				{%endfor%}
-			</div>
-			<div class="col s12">
-			<form action="/client/search/" method="post" accept-charset="utf-8">
-				{%csrf_token%}
-				<div class="input-field">
-          <input id="search" type="search" required>
-          <label for="search"><i class="material-icons">search</i></label>
-          <i class="material-icons">close</i>
-        </div>
-			</form>
-			<a href="/client/recomend/" title="">Recomendar</a>
-	<br><br>
-	{% if results %}
-		Resultados de la busqueda: 
-		<br><br>
-		{%for result in results %}
-			{{result.name}} -- ${{result.price}} -- {{result.business}}
-		{%endfor%}
-	{%elif place_recomended%}
-		Lugar recomendado:
-		<br><br>
-		Nombre: {{place_recomended.business_user}}
-		<br><br>
-		Direccion: {{place_recomended.address}}
-
-	{%else%}
-		{% for place in places %}
-			{{place.latitude}}, {{place.longitude}}
-		{%endfor%}
-	{% endif %}
-{% endif %}
-		</div>
-		</div>
-    </div>
-	
-
+{%endif%}
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="{% static 'js/products.js' %}"></script>
-<script src="{% static 'js/init.js' %}"></script>
-<script src="{% static 'js/materialize.min.js' %}"></script>
-
-{% if places_category %}
-<div id="map"></div>
-
-{%endif%}
-
-<script>
-
-	var map;
-	function initMap() {
-	  map = new google.maps.Map(document.getElementById('map'), {
-	    center: {lat: -34.397, lng: 150.644},
-	    zoom: 8
-	  });
-	}
-
-</script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRDVQPIXrDI_BxIe-IbrEvE8osPdr-K9A"></script>
 </body>
 </html>

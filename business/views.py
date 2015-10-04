@@ -61,16 +61,14 @@ class SalesView(View):
 		return render(request, 'dashboard.html', context)
 
 	def post(self, request):
-		products = request.POST.getlist('checks')
+		products = Product.objects.all()
 
-		
-
-		for i in products:
-			Sale(
-				quantity=request.POST['quantity%s' % i],
-				product=get_object_or_404(Product, pk=i),
-			).save()
-		print(products)
+		for product in products:
+			if int(request.POST['quantity%s' % product.pk]) > 0:
+				Sale(
+					quantity=request.POST['quantity%s' % product.pk],
+					product=product,
+				).save()
 
 		return redirect('business:sales')
 
@@ -87,7 +85,7 @@ class AddProductView(View):
 
 	def post(self, request):
 		product = ProductForm(request.POST, request.FILES).save(commit=False)
-		product.business(BusinessUser.objects.get(user=request.user.pk))
+		product.business = BusinessUser.objects.get(user=request.user.pk)
 		product.save()
 
 		counter = 1
