@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
 from django.views.generic import View
+from django.shortcuts import get_object_or_404
 
 from .forms import ProductForm, MaterialForm
-from .models import Product
+from .models import Product, Material, Sale
 
 
 def business_dashboard(request):
@@ -19,27 +20,47 @@ def business_graphic(request):
 
 
 def business_stock(request):
-	context = {}
-	return render(request, 'dashboard.html')
+	context = {
+		'user_type': True,
+		'func': 'stock',
+		'materials': Material.objects.all()
+	}
+	return render(request, 'dashboard.html', context)
 
 
 def business_products(request):
-
 	context = {
 			'user_type': True,
 			'func': 'catalogo',
 			'products': Product.objects.all()
 		}
-	return render(request, 'dashboard.html')
+	return render(request, 'dashboard.html', context)
 
 
 class SalesView(View):
 	def get(self, request):
 		context = {
+			'products': Product.objects.all(),
 			'user_type': True,
 			'func': 'ventas'
 		}
 		return render(request, 'dashboard.html', context)
+
+	def post(self, request):
+		products = request.POST.getlist('checks')
+
+		print(request.POST['quantity%s' % 3])
+
+		for i in products:
+			Sale(
+				quantity=request.POST['quantity%s' % i],
+				product=get_object_or_404(Product, pk=i),
+			).save()
+		print(products)
+
+		return redirect('business:sales')
+
+
 
 
 class AddProductView(View):

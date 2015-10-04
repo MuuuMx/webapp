@@ -18,6 +18,7 @@ urlpatterns = patterns(
 		views.SalesView.as_view(),
 		name='sales'
 	),
+	#ya
 	url(
 		r'^add_product/$',
 		views.AddProductView.as_view(),
@@ -28,6 +29,7 @@ urlpatterns = patterns(
 		views.business_stock,
 		name='stock'
 	),
+	#ya
 	url(
 		r'^products/$',
 		views.business_products,

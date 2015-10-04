@@ -19,6 +19,9 @@ class Product(models.Model):
 	price = models.IntegerField()
 	quantity = models.IntegerField()
 
+	def __str__(self):
+		return str(self.name)
+
 
 #Insumos
 class Material(models.Model):
@@ -29,11 +32,17 @@ class Material(models.Model):
 	quantity = models.IntegerField()
 	cost = models.IntegerField()
 
+	def __str__(self):
+		return str(self.name)
+
 
 class Sale(models.Model):
 	product = models.ForeignKey(Product)
 	quantity = models.IntegerField()
 	date = models.DateField(default=datetime.date.today)
+
+	def __str__(self):
+		return str(self.product)
 
 
 # class Stock(models.Model):
