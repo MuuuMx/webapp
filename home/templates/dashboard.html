@@ -7,7 +7,8 @@
 	<link rel="stylesheet" href="">
 </head>
 <body>
-
+<a href="/logout/" class="button">Salir</a>
+{% if user_type  %}
 <nav>
 	<ul>
 		<li><a href="/business/dashboard/graphic" title="Grafica">
@@ -35,6 +36,10 @@
 		</a></li>
 	</ul>
 </nav>
+{% else %}
+Soy un cliente
+{% endif %}
+
 	
 	
 </body>

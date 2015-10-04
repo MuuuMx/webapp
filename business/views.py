@@ -3,7 +3,7 @@ from django.views.generic import View
 
 
 def business_dashboard(request):
-	context = {}
+	context = {'user_type': True}
 	return render(request, 'dashboard.html', context)
 
 

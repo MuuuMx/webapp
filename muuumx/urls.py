@@ -1,17 +1,15 @@
-from django.conf.urls import include, url
+from django.conf.urls import include, url, patterns
 from django.contrib import admin
 
 from home import views as home_views
 from users import views as user_views
 
-urlpatterns = [
-    # Examples:
-    # url(r'^blog/', include('blog.urls')),
-    # url(r'^', include('social.apps.django_app.urls', namespace='social')),
-
+urlpatterns = patterns(
+    '',
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^business/$', include('business.urls'), name='business'),
-    url(r'^client/$', include('business.urls'), name='client'),
+    url(r'^business/$', include('business.urls', namespace='business')),
+    url(r'^client/$', include('business.urls', namespace='client')),
+
     url(
         r'^$',
         home_views.home_page,
@@ -37,4 +35,4 @@ urlpatterns = [
         user_views.logout_user,
         name='login'
     ),
-]
+)

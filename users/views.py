@@ -85,7 +85,9 @@ class SignupBusinessView(View):
 				print(user.errors.items())
 				user.pk
 
-			bussines_user = BusinessUserForm(request.POST, request.FILES).save()
+			business_user = BusinessUserForm(request.POST, request.FILES).save(commit=False)
+			business_user.user = user
+			business_user.save()
 
 			address = request.POST['address'].replace(' ', '+')
 
