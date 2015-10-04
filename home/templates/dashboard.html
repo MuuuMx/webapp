@@ -45,7 +45,21 @@ Soy un cliente
 {% if func == 'resumen' %}
 	la grafica pendeja
 {% elif func == 'ventas'%}
-	mostrar ventas
+	Registrar venta
+	<br><br>
+	<form method="post" action="/business/sales/">
+	{% csrf_token %}
+	{% for product in products%}
+		{{product.name}}:
+		<input name="checks" id="checks{{product.pk}}" type="checkbox" value="{{product.pk}}"> 
+		Cantidad: <input type="number" name="quantity{{product.pk}}"/>
+		<br><br>
+	{%endfor%}
+
+	<input type="submit" value="añadir ventas"/>
+	</form>
+
+
 {% elif func == 'product' %}
 
 	<form action="/business/add_product/" method="post" accept-charset="utf-8">
@@ -64,11 +78,26 @@ Soy un cliente
 		<input type="submit" value="enviar"/>
 
 	</form>
-{% elif func == 'catalogo'%}
+{% elif func == 'catalogo' %}
+	Productos:
+	<br><br>
 	{% for product in products %}
 		{{product.name}} -- ${{product.price}}
+		<br><br>
+	{% endfor %}
+
+
+{% elif func == 'stock' %}
+	Stock de materiales utilizados
+	<br><br>
+	{%for material in materials%}
+		{{material.name}} -- {{material.quantity}}
+		<br><br>
 	{%endfor%}
+
 {% endif %}
+
+
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="{% static 'js/products.js' %}"></script>
 </body>
