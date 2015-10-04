@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html>
   <head>
   	{% load staticfiles %}
@@ -15,27 +15,40 @@
   <body>
   	<nav class="white" role="navigation">
     <div class="nav-wrapper container">
-      <a id="logo-container" href="home.html" class="brand-logo grey-text text-darken-4">El Link</a>
+      <a id="logo-container" href="/ " class="brand-logo grey-text text-darken-4">El Link</a>
     </div>
   </nav>
 
-  <form action="/login/" method="post" accept-charset="utf-8">
-    {% csrf_token %}
-    {% for field in user_form %}
-      {{field.label}}: {{field}}
-      <br><br>
-    {% endfor %}
-    <input type="submit" value="Enviar">
-  </form>
-            
+  <div class="container">       
+    <div class="row valign-grapper">
+      <div class="col s12 center-align">
+        <div class="card-panel teal white-text"><h4>Iniciar Sesión</h4></div>
+        <form action="/login/" method="post" accept-charset="utf-8">
+              {% csrf_token %}
+              {% for field in user_form %}
+                {{field.label}}: {{field}}
+                <br><br>
+              {% endfor %}
+              <input type="submit" class="boton" value="Entrar" Style="">
+        </form>
+      </div>
+    </div> 
   
+  <div class="row">
+        <div class="col s12 center">
+          <h3><i class="mdi-content-send brown-text"></i></h3>
+          <h4>Contact Us</h4>
+          <p class="left-align light">algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo algo </p>
+        </div>
+  </div>
+ </div>
  
   <footer class="page-footer teal">
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
-          <h5 class="white-text">Company Bio</h5>
-          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+          <h5 class="white-text">MXHACKS III FALL SEASON 2015</h5>
+          <p class="grey-text text-lighten-4">En MXHacks estamos dispuestos a no dormir hasta ver hecho realidad lo que otros solo se permiten soñar.</p>
 
 
         </div>
@@ -57,7 +70,7 @@
     </div>
     <div class="footer-copyright">
       <div class="container">
-      Hecho con <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>, <a class="brown-text text-lighten-3" href="https://www.djangoproject.com/">Django</a> y <a class="brown-text text-lighten-3" href="#">Javascript</a>
+      Hecho con <a class="brown-text text-lighten-3" href="http://materializecss.com">Materializecss</a>, <a class="brown-text text-lighten-3" href="https://www.djangoproject.com/">Django</a> y <a class="brown-text text-lighten-3" href="#">Javascript</a>
       </div>
     </div>
   </footer>
